@@ -1,0 +1,279 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #0f0f0f;
+}
+
+.leftSide {
+  flex: 1;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    width: 100%;
+
+    & .title {
+      text-align: left;
+      font-size: 1.8vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--font-lineh-small);
+      letter-spacing: -0.025em;
+      margin-top: 1vw;
+
+      & .highlight {
+        background: linear-gradient(to right, rgb(59, 130, 246), rgb(168, 85, 247));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    & .screenshotWrapper {
+      width: 100%;
+      border-radius: 0.5vw;
+      margin-top: 1vw;
+
+      & .screenshot {
+        width: 100%;
+        border-radius: 0.5vw;
+      }
+    }
+
+    & .description {
+      text-align: left;
+      font-size: 0.85vw;
+      color: var(--color-gray);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal);
+      margin-top: 1vw;
+    }
+
+    & .footer {
+      text-align: left;
+      font-size: 0.65vw;
+      color: var(--color-gray);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal);
+      margin-top: 1vw;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .leftSide {
+    display: none;
+  }
+}
+
+.rightSide {
+  flex: 1;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 18vw;
+}
+
+.formTitle {
+  text-align: center;
+  font-size: 2vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+}
+
+.welcome {
+  text-align: center;
+  font-size: 0.65vw;
+  color: var(--color-gray);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  margin-top: 0.5vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25vw;
+  margin-top: 0.75vw;
+
+  & .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
+
+    & .label {
+      font-size: 0.65vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
+    }
+
+    & .inputWrapper {
+      position: relative;
+
+      & .input {
+        width: 100%;
+        padding: 0.7vw 0.75vw;
+        font-size: 0.75vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-lineh-small);
+        outline: none;
+        transition: all 0.3s;
+        background: #222;
+        border-radius: 0.5vw;
+        border: 0.01vw solid rgba(255, 255, 255, 0.3);
+
+        &::placeholder {
+          opacity: 0.9;
+        }
+
+        &:focus {
+          border: 0.01vw solid rgba(255, 255, 255, 0.1);
+        }
+
+        &.errorInput {
+          font-size: 0.55vw;
+          color: #ef4444;
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-normal);
+        }
+      }
+
+      & .eyeBtn {
+        position: absolute;
+        right: 0.5vw;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        & .passwordIcon {
+          color: var(--color-gray);
+          width: 0.75vw;
+          height: 0.75vw;
+        }
+      }
+    }
+
+    & .error {
+      font-size: 0.55vw;
+      color: #ef4444;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal);
+    }
+  }
+
+  & .submitBtn {
+    width: 100%;
+    background: var(--color-purple-for-button);
+    font-size: 0.75vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-smallBold);
+    line-height: var(--font-lineh-normal);
+    padding: 0.55vw 0;
+    border: none;
+    border-radius: 0.5vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: rgba(107, 65, 179, 0.8);
+      border: 0.1vw solid rgba(107, 65, 179, 0.2);
+      box-shadow: 0 0.1vw 0.25vw 0.15vw rgba(107, 65, 179, 0.2);
+    }
+  }
+}
+
+.divider {
+  text-align: center;
+  position: relative;
+  margin-top: 1vw;
+
+  span {
+    background: #111;
+    font-size: 0.55vw;
+    color: var(--color-gray);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+    opacity: 0.7;
+  }
+}
+
+.googleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #222;
+  font-size: 0.65vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-smallBold);
+  line-height: var(--font-lineh-normal);
+  padding: 0.55vw 0;
+  border: none;
+  border-radius: 0.5vw;
+  border: 0.1vw solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1vw;
+  gap: 0.5vw;
+
+  &:hover {
+    background: #2a2a2a;
+    border-color: #555;
+  }
+
+  img {
+    border-radius: 0.2vw;
+  }
+}
+
+.signup {
+  text-align: center;
+  background: #111;
+  font-size: 0.5vw;
+  color: var(--color-gray);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  opacity: 0.7;
+  margin-top: 0.5vw;
+
+  & .signupLink {
+    color: #00ccff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
