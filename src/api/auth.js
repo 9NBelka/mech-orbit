@@ -1,4 +1,4 @@
-const API_URL = 'https://crmmech.com';
+const API_URL = 'https://api.crmmech.com';
 
 export async function loginRequest(email, password) {
   const response = await fetch(`${API_URL}/api/v1/auth/login`, {
