@@ -228,14 +228,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2vw;
+  gap: 8vw;
   margin-top: 3vw;
 
   & .blockImageDashboard {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35%;
+    width: 20%;
     padding-bottom: 0;
 
     & img {
@@ -243,7 +243,7 @@
       border: 0.01vw solid rgba(255, 255, 255, 0.05);
       padding: 0.4vw;
       border-radius: 1vw;
-      width: 18vw;
+      width: 16vw;
       border-radius: 0.25vw;
     }
   }
@@ -251,7 +251,7 @@
 
 @media (max-width: 1024px) {
   .imageAndIconBlocks {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 4vw;
     margin-top: 4vw;
 
@@ -285,7 +285,7 @@
 }
 
 .iconsBlocks {
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 2vw;

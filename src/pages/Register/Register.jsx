@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import styles from './Register.module.scss';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import clsx from 'clsx'; // Не забудь встановити: npm i clsx
 import { registerStep1, googleLoginRequest } from '../../api/auth';
+import { BsArrowLeftShort } from 'react-icons/bs';
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -87,26 +88,26 @@ export default function Register() {
 
   const handleGoogleLogin = () => {
     /* global google */
+
     google.accounts.id.initialize({
-      client_id: 'YOUR_GOOGLE_CLIENT_ID',
+      client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
       callback: async (response) => {
         try {
-          const token = response.credential;
-          const payload = JSON.parse(atob(token.split('.')[1]));
+          if (!response?.credential) {
+            throw new Error('Google credential not found');
+          }
 
           const data = await googleLoginRequest({
-            token,
-            email: payload.email,
-            display_name: payload.name,
+            token: response.credential,
           });
 
           localStorage.setItem('access_token', data.access_token);
+          localStorage.setItem('refresh_token', data.refresh_token);
 
-          alert(`Вхід через Google: ${data.email}`);
-          // navigate('/dashboard');
-        } catch (err) {
-          console.error(err);
-          alert('Помилка Google реєстрації');
+          navigate('https://app.crmmech.com/video-control');
+        } catch (error) {
+          console.error('Google login error:', error);
+          alert('Помилка авторизації через Google');
         }
       },
     });
@@ -114,9 +115,15 @@ export default function Register() {
     google.accounts.id.prompt();
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
+        <p className={styles.backText} onClick={() => navigate('/')}>
+          <BsArrowLeftShort className={styles.icon} />
+          back
+        </p>
         <div className={styles.content}>
           <h1 className={styles.title}>
             Реєстрація <span className={styles.highlight}>автосервісу</span>

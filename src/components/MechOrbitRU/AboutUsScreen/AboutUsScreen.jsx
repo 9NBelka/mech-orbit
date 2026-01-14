@@ -9,7 +9,7 @@ import { CgFileDocument } from 'react-icons/cg';
 import { BsArrowRightShort } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-export default function AboutUsScreen() {
+export default function AboutUsScreen({ scrollToSection }) {
   const aboutUsText = [
     {
       icon: <CgFileDocument className={styles.cardIcon} />,
@@ -74,10 +74,13 @@ export default function AboutUsScreen() {
             </div>
           </div>
           <div className={styles.buttons}>
-            <Link to='/register' target='_blank' className={styles.button}>
+            {/* <Link to='/register' target='_blank' className={styles.button}>
               Подключить
-            </Link>
+            </Link> */}
 
+            <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
+              Подключить
+            </button>
             <a href='https://crmmech.com/' target='_blank'>
               <button className={clsx(styles.button, styles.buttonTwo)}>
                 Дивитись результати

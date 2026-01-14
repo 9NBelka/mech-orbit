@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styles from './Login.module.scss';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { loginRequest } from '../../api/auth';
 import { googleLoginRequest } from '../../api/auth';
+import { BsArrowLeftShort } from 'react-icons/bs';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -76,9 +77,8 @@ export default function Login() {
       localStorage.setItem('access_token', data.access_token);
       localStorage.setItem('refresh_token', data.refresh_token);
 
-      // 👉 редірект
-      alert('Успішний вхід 🚀');
-      // navigate('/dashboard');
+      // alert('Успішний вхід 🚀');
+      navigate('https://app.crmmech.com/video-control');
     } catch (err) {
       console.error(err);
 
@@ -93,39 +93,42 @@ export default function Login() {
 
   const handleGoogleLogin = () => {
     /* global google */
+
     google.accounts.id.initialize({
-      client_id: 'YOUR_GOOGLE_CLIENT_ID',
+      client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
       callback: async (response) => {
         try {
-          const token = response.credential;
-
-          // Розпарсимо payload токена (email, name)
-          const payload = JSON.parse(atob(token.split('.')[1]));
+          if (!response?.credential) {
+            throw new Error('Google credential not found');
+          }
 
           const data = await googleLoginRequest({
-            token,
-            email: payload.email,
-            display_name: payload.name,
+            token: response.credential,
           });
 
-          // 🔐 зберігаємо токен
           localStorage.setItem('access_token', data.access_token);
+          localStorage.setItem('refresh_token', data.refresh_token);
 
-          alert(`Вхід через Google: ${data.email}`);
-          // navigate('/dashboard');
-        } catch (err) {
-          console.error(err);
-          alert('Помилка Google авторизації');
+          navigate('https://app.crmmech.com/video-control');
+        } catch (error) {
+          console.error('Google login error:', error);
+          alert('Помилка авторизації через Google');
         }
       },
     });
 
-    google.accounts.id.prompt(); // відкриває Google popup
+    google.accounts.id.prompt();
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
+        <p className={styles.backText} onClick={() => navigate('/')}>
+          <BsArrowLeftShort className={styles.icon} />
+          back
+        </p>
         <div className={styles.content}>
           <h1 className={styles.title}>
             Реєстрація <span className={styles.highlight}>автосервісу</span>
@@ -217,7 +220,7 @@ export default function Login() {
             <span>Або увійдіть за допомогою</span>
           </div>
           <button type='button' onClick={handleGoogleLogin} className={styles.googleBtn}>
-            <img src='https://www.google.com/favicon.ico' alt='Google' width='20' />
+            <img src='https://www.google.com/favicon.ico' alt='Google' />
             Sign in with Google
           </button>
           <p className={styles.signup}>

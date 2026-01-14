@@ -47,9 +47,14 @@ const Hero = ({ scrollToSection }) => {
             ))}
           </div>
           <div className={styles.buttons}>
-            <Link to='/register' target='_blank'>
+            {/* <Link to='/register' target='_blank'>
               <button className={styles.button}>Подключить</button>
-            </Link>
+            </Link> */}
+
+            <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
+              Подключить
+            </button>
+
             <button
               onClick={() => scrollToSection('contacts')}
               className={clsx(styles.button, styles.buttonTwo)}>

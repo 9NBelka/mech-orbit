@@ -18,28 +18,23 @@ export async function loginRequest(email, password) {
     throw errorData;
   }
 
-  return response.json(); // access_token, refresh_token
+  return response.json();
 }
 
-export async function googleLoginRequest({ token, email, display_name }) {
-  const response = await fetch(`${API_URL}/api/v1/auth/google-login`, {
+export async function googleLoginRequest({ token }) {
+  const res = await fetch(`${API_URL}/api/v1/auth/google`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      token,
-      email,
-      display_name,
-    }),
+    body: JSON.stringify({ token }),
   });
 
-  if (!response.ok) {
-    const error = await response.json();
-    throw error;
+  if (!res.ok) {
+    throw await res.json();
   }
 
-  return response.json();
+  return res.json();
 }
 
 export async function registerStep1({ email, password, language = 'uk' }) {

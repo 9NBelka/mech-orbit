@@ -10,7 +10,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 2vw;
+
+  & .backText {
+    position: absolute;
+    top: 0%;
+    left: 9.9%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.65vw;
+    color: var(--color-light-gray);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-light);
+    line-height: var(--font-lineh-normal);
+    margin-top: 3vw;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    & .icon {
+      width: 1vw;
+      height: 1vw;
+      fill: var(--color-light-gray);
+    }
+  }
 
   & .content {
     display: flex;
@@ -82,12 +105,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 2vw;
+}
+
+@media (max-width: 1024px) {
+  .rightSide {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+      url('images/mech-orbit-screen-dashboard.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10vw);
+  }
 }
 
 .formContainer {
   width: 100%;
   max-width: 18vw;
+}
+
+@media (max-width: 1024px) {
+  .formContainer {
+    max-width: 80vw;
+    background: rgba(112, 112, 112, 0.2);
+    backdrop-filter: blur(1vw);
+    padding: 4vw 4vw;
+    border-radius: 1.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .formContainer {
+    max-width: 90vw;
+    padding: 6vw 5vw;
+    border-radius: 2.5vw;
+  }
 }
 
 .formTitle {
@@ -107,6 +158,28 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-normal);
   margin-top: 0.5vw;
+}
+
+@media (max-width: 1024px) {
+  .formTitle {
+    font-size: 5.4vw;
+  }
+
+  .welcome {
+    font-size: 1.8vw;
+    margin-top: 1.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .formTitle {
+    font-size: 8vw;
+  }
+
+  .welcome {
+    font-size: 3.6vw;
+    margin-top: 2vw;
+  }
 }
 
 .form {
@@ -211,19 +284,143 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .form {
+    gap: 2.5vw;
+    margin-top: 3vw;
+
+    & .field {
+      gap: 1vw;
+
+      & .label {
+        font-size: 1.8vw;
+      }
+
+      & .inputWrapper {
+        & .input {
+          padding: 1.5vw 2vw;
+          font-size: 1.8vw;
+          border-radius: 1vw;
+          border: 0.01vw solid rgba(255, 255, 255, 0.3);
+
+          &:focus {
+            border: 0.01vw solid rgba(255, 255, 255, 0.1);
+          }
+
+          &.errorInput {
+            font-size: 1.55vw;
+          }
+        }
+
+        & .eyeBtn {
+          right: 1.2vw;
+          top: 50%;
+
+          & .passwordIcon {
+            width: 2vw;
+            height: 2vw;
+          }
+        }
+      }
+
+      & .error {
+        font-size: 1.55vw;
+      }
+    }
+
+    & .submitBtn {
+      font-size: 1.8vw;
+      padding: 1.5vw 0;
+      border-radius: 1vw;
+
+      &:hover {
+        background-color: rgba(107, 65, 179, 0.8);
+        border: 0.1vw solid rgba(107, 65, 179, 0.2);
+        box-shadow: 0 0vw 0vw 0vw rgba(107, 65, 179, 0.2);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    gap: 5vw;
+    margin-top: 3vw;
+
+    & .field {
+      gap: 2vw;
+
+      & .label {
+        font-size: 3.6vw;
+      }
+
+      & .inputWrapper {
+        & .input {
+          padding: 2.5vw 3vw;
+          font-size: 3.6vw;
+          border-radius: 1.5vw;
+
+          &.errorInput {
+            font-size: 3.2vw;
+          }
+        }
+
+        & .eyeBtn {
+          right: 2.25vw;
+          top: 50%;
+
+          & .passwordIcon {
+            width: 3.5vw;
+            height: 3.5vw;
+          }
+        }
+      }
+
+      & .error {
+        font-size: 3.2vw;
+      }
+    }
+
+    & .submitBtn {
+      font-size: 3.6vw;
+      padding: 2.5vw 0;
+      border-radius: 1.5vw;
+    }
+  }
+}
+
 .divider {
   text-align: center;
   position: relative;
   margin-top: 1vw;
 
   span {
-    background: #111;
     font-size: 0.55vw;
     color: var(--color-gray);
     font-family: var(--font-Inter);
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineh-normal);
     opacity: 0.7;
+  }
+}
+
+@media (max-width: 1024px) {
+  .divider {
+    margin-top: 3.5vw;
+
+    span {
+      font-size: 1.8vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .divider {
+    margin-top: 5vw;
+
+    span {
+      font-size: 3.6vw;
+    }
   }
 }
 
@@ -253,13 +450,43 @@
   }
 
   img {
+    width: 1vw;
     border-radius: 0.2vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .googleBtn {
+    padding: 1.5vw 2vw;
+    font-size: 1.8vw;
+    border-radius: 1vw;
+    margin-top: 3.5vw;
+    gap: 1.5vw;
+
+    img {
+      width: 2.75vw;
+      border-radius: 1vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .googleBtn {
+    font-size: 3.6vw;
+    padding: 2.5vw 0;
+    border-radius: 1.5vw;
+    margin-top: 5vw;
+    gap: 3vw;
+
+    img {
+      width: 4.5vw;
+      border-radius: 4vw;
+    }
   }
 }
 
 .signup {
   text-align: center;
-  background: #111;
   font-size: 0.5vw;
   color: var(--color-gray);
   font-family: var(--font-Inter);
@@ -275,5 +502,19 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .signup {
+    font-size: 1.8vw;
+    margin-top: 2.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .signup {
+    font-size: 3.6vw;
+    margin-top: 5vw;
   }
 }

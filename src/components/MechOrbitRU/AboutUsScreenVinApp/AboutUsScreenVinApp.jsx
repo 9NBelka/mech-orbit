@@ -1,42 +1,35 @@
 import { FaArrowTrendUp } from 'react-icons/fa6';
-import styles from './AboutUsScreenBookvin.module.scss';
+import styles from './AboutUsScreenVinApp.module.scss';
 import clsx from 'clsx';
-import { CgFileDocument } from 'react-icons/cg';
-import { LuFactory } from 'react-icons/lu';
-import { GoDotFill } from 'react-icons/go';
-import { BsArrowRightShort, BsIntersect } from 'react-icons/bs';
+import { LuBox, LuCamera, LuClipboardList, LuFactory, LuWrench } from 'react-icons/lu';
+import { BsArrowRightShort } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { RiAlertLine, RiMap2Fill, RiWallet3Fill } from 'react-icons/ri';
 
-export default function AboutUsScreenBookvin({ scrollToSection }) {
+export default function AboutUsScreenVinApp({ scrollToSection }) {
   const aboutUsText = [
     {
-      icon: <BsIntersect className={styles.cardIcon} />,
-      title: 'Електронна Сервісна Книга',
-      description:
-        'Незамінний помічник. Повна історія обслуговування, яка завжди під рукою. Підвищує залишкову вартість авто при продажу.',
+      icon: <LuCamera className={styles.cardIcon} />,
+      title: 'Фотофіксація авто',
+      description: 'Швидке фото пошкоджень та стану автомобіля з мобільного',
       classForHover: 'classForHoverBlue',
     },
     {
-      icon: <RiMap2Fill className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
-      title: 'Регламент від Виробника',
-      description:
-        'Забудьте про здогадки. Додаток чітко скаже, коли міняти ГРМ, рідини та свічки саме для вашої моделі авто.',
+      icon: <LuWrench className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
+      title: 'Мобільна діагностика',
+      description: 'Проведення діагностики та фіксація результатів прямо з телефону',
       classForHover: 'classForHoverPurple',
     },
 
     {
-      icon: <RiWallet3Fill className={clsx(styles.cardIcon, styles.colorGreen)} />,
-      title: 'Контроль Витрат (OCR)',
-      description:
-        'Зберігайте чеки простим фотографуванням. Розумійте реальну вартість володіння кілометром пробігу.',
+      icon: <LuClipboardList className={clsx(styles.cardIcon, styles.colorGreen)} />,
+      title: 'Управління роботами',
+      description: 'Контроль хода робіт, оновлення статусів завдань',
       classForHover: 'classForHoverGreen',
     },
     {
-      icon: <RiAlertLine className={clsx(styles.cardIcon, styles.colorPurple)} />,
-      title: 'Попередження Поломок',
-      description:
-        'Аналізуючи дані тисяч подібних авто, система попередить про типові слабкі місця вашої моделі до того, як вони стануть проблемою.',
+      icon: <LuBox className={clsx(styles.cardIcon, styles.colorPurple)} />,
+      title: 'Облік запчастин',
+      description: 'Сканування, замовлення та контроль запасних частин',
       classForHover: 'classForHoverOrange',
     },
   ];
@@ -49,17 +42,11 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
             <p>Створено реальним автосервісом</p>
           </div> */}
           <h3 className={styles.titleScreen}>
-            <span>Bookvin</span> - мобільний додаток автовласника
+            <span>Мобільний додаток автомеханіка</span>
           </h3>
           <div className={styles.borderLine}></div>
-          <p className={styles.textDescription}>
-            Ми створили bookvin з побажань автовласників. В основі — регламенти автовиробників та
-            досвід обслуговування тисяч авто.
-          </p>
+          <p className={styles.textDescription}>Всі дані з додатку миттєво потрапляють у CRMmech</p>
           <div className={styles.imageAndIconBlocks}>
-            <div className={styles.blockImageDashboard}>
-              <img src='images/mech-orbit-screen-bookvin.webp' />
-            </div>
             <div className={styles.iconsBlocks}>
               {aboutUsText.map((text, index) => (
                 <div key={index} className={styles.card}>
@@ -78,6 +65,9 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className={styles.blockImageDashboard}>
+              <img src='images/mech-orbit-screen-vin-app.webp' />
             </div>
           </div>
           <div className={styles.buttons}>
