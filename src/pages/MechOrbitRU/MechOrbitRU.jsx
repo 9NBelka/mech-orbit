@@ -10,6 +10,7 @@ import TariffsScreen from '../../components/MechOrbitRU/TariffsScreen/TariffsScr
 import Footer from '../../components/MechOrbitRU/Footer/Footer';
 import ContactsScreen from '../../components/MechOrbitRU/ContactsScreen/ContactsScreen';
 import ScrollToHash from '../../components/ScrollToHash/ScrollToHash';
+import AboutUsScreenBookvin from '../../components/MechOrbitRU/AboutUsScreenBookvin/AboutUsScreenBookvin';
 
 export default function MechOrbitRU({ isScrolled, scrollToSection }) {
   const onFooterAndHeaderTextLinksMain = [
@@ -50,6 +51,7 @@ export default function MechOrbitRU({ isScrolled, scrollToSection }) {
       <main>
         <Hero scrollToSection={scrollToSection} />
         <AboutUsScreen />
+        <AboutUsScreenBookvin />
         <WhyUsScreen />
         <WhatDoWeHaveScreen />
         <AIMonitoringScreen scrollToSection={scrollToSection} />

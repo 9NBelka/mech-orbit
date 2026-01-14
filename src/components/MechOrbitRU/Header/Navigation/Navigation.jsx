@@ -9,8 +9,11 @@ export default function Navigation({ handleScroll, tablet, onFooterAndHeaderText
           {info.title}
         </a>
       ))}
-      <button className={styles.buttonInvest} onClick={() => handleScroll('contacts')}>
+      {/* <button className={styles.buttonInvest} onClick={() => handleScroll('contacts')}>
         Invest Now
+      </button> */}
+      <button className={styles.buttonInvest} onClick={() => handleScroll('contacts')}>
+        Инвестировать
       </button>
     </nav>
   );
