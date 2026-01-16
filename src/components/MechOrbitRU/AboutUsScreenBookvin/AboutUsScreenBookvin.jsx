@@ -7,6 +7,7 @@ import { GoDotFill } from 'react-icons/go';
 import { BsArrowRightShort, BsIntersect } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { RiAlertLine, RiMap2Fill, RiWallet3Fill } from 'react-icons/ri';
+import { TbSettingsFilled } from 'react-icons/tb';
 
 export default function AboutUsScreenBookvin({ scrollToSection }) {
   const aboutUsText = [
@@ -18,7 +19,7 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
       classForHover: 'classForHoverBlue',
     },
     {
-      icon: <RiMap2Fill className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
+      icon: <TbSettingsFilled className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
       title: 'Регламент від Виробника',
       description:
         'Забудьте про здогадки. Додаток чітко скаже, коли міняти ГРМ, рідини та свічки саме для вашої моделі авто.',
@@ -27,7 +28,7 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
 
     {
       icon: <RiWallet3Fill className={clsx(styles.cardIcon, styles.colorGreen)} />,
-      title: 'Контроль Витрат (OCR)',
+      title: 'Контроль Витрат',
       description:
         'Зберігайте чеки простим фотографуванням. Розумійте реальну вартість володіння кілометром пробігу.',
       classForHover: 'classForHoverGreen',
@@ -81,11 +82,11 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
             </div>
           </div>
           <div className={styles.buttons}>
-            {/* <Link to='/register' target='_blank' className={styles.button}>
-              Подключить
-            </Link> */}
+            <Link to='https://book.vin' target='_blank' className={styles.button}>
+              Узнать больше <BsArrowRightShort className={styles.buttonIconTwo} />
+            </Link>
 
-            <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
+            {/* <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
               Подключить
             </button>
             <a href='https://crmmech.com/' target='_blank'>
@@ -93,7 +94,7 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
                 Дивитись результати
                 <BsArrowRightShort className={styles.buttonIconTwo} />
               </button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

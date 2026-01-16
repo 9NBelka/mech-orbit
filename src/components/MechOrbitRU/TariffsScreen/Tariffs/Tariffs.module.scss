@@ -24,16 +24,16 @@
   -webkit-overflow-scrolling: touch; // momentum scroll на iOS
 
   // 🔹 Отступ слева
-  &::before {
-    content: '';
-    flex: 0 0 9.1vw;
-  }
+  // &::before {
+  //   content: '';
+  //   flex: 0 0 9.1vw;
+  // }
 
   // 🔹 Отступ справа
-  &::after {
-    content: '';
-    flex: 0 0 9.1vw;
-  }
+  // &::after {
+  //   content: '';
+  //   flex: 0 0 9.1vw;
+  // }
 
   & .card {
     flex: 0 0 25vw;
@@ -71,6 +71,10 @@
       &:hover {
         border: 0.1vw solid rgb(83, 65, 105);
       }
+    }
+
+    &.transparent {
+      visibility: hidden;
     }
 
     & .headerCard {

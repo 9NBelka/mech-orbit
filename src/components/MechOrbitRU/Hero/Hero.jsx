@@ -9,20 +9,11 @@ import { Link } from 'react-router-dom';
 const Hero = ({ scrollToSection }) => {
   const heroList = [
     {
-      title: 'Видеонаблюдение с контролем времени простоя на основе ИИ',
+      titleBold: 'Клиент',
+      title: 'доверие, прозрачность, согласование работ со смартфона',
     },
-    {
-      title: 'Планирование работы и мониторинг загрузки коробок',
-    },
-    {
-      title: 'Одобрение работы на смартфоне клиента',
-    },
-    {
-      title: 'Интеграции с поставщиками и платежами',
-    },
-    {
-      title: 'Аналитика прибыльности в один клик',
-    },
+    { titleBold: 'Механик', title: 'чёткие задачи, фиксация работы, честная оплата' },
+    { titleBold: 'Владелец', title: 'контроль процессов, реальная аналитика, прибыль в цифрах' },
   ];
 
   return (
@@ -31,7 +22,7 @@ const Hero = ({ scrollToSection }) => {
         <div className={styles.textContent}>
           <div className={styles.badge}>
             <GoDotFill className={styles.badgeIndicator} />
-            <p>Pre-seed Round Open</p>
+            <p>OS прибыльного автосервиса</p>
           </div>
           <h1 className={styles.headline}>
             <span className={styles.gradientText}>Операционная система</span> <br />
@@ -39,28 +30,40 @@ const Hero = ({ scrollToSection }) => {
           </h1>
 
           <div className={styles.descriptionBlock}>
+            <p className={styles.subDescription}>
+              Три продукта. Одна система. От заезда автомобиля — до прибыли автосервиса.
+            </p>
+            <p className={styles.descriptionTitle}>
+              MECH связывает клиента, механика и владельца в единую систему управления автосервисом.
+            </p>
             {heroList.map((textList, index) => (
               <div key={index} className={styles.descriptionAndIconBlock}>
                 <IoMdCheckmark className={styles.checkmarkIcon} />
-                <p className={styles.description}>{textList.title}</p>
+
+                <p className={styles.description}>
+                  <span>{textList.titleBold}</span> — {textList.title}
+                </p>
               </div>
             ))}
+            <p className={styles.subDescription}>
+              Одна экосистема. Полный контроль. Прогнозируемый результат.
+            </p>
           </div>
           <div className={styles.buttons}>
-            {/* <Link to='/register' target='_blank'>
-              <button className={styles.button}>Подключить</button>
-            </Link> */}
+            <Link to='/register' target='_blank'>
+              <button className={styles.button}>Начните прямо сейчас - это бесплатно!</button>
+            </Link>
 
-            <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
+            {/* <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
               Подключить
-            </button>
+            </button> */}
 
-            <button
+            {/* <button
               onClick={() => scrollToSection('contacts')}
               className={clsx(styles.button, styles.buttonTwo)}>
               Тест
               <BsArrowRightShort className={styles.buttonIconTwo} />
-            </button>
+            </button> */}
           </div>
           <div className={styles.note}>
             Единая система, в которой работа, люди, видеонаблюдение, запасные части, платежи и

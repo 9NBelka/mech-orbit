@@ -16,31 +16,30 @@ export default function WhatDoWeHaveScreen() {
   const whatDoWeHaveText = [
     {
       icon: <LuBrain className={clsx(styles.cardIcon, styles.colorPink)} />,
-      title: 'Core — CRM MECH',
+      title: 'Core',
       description: 'Единое ядро для владельца: клиенты, заказы, касса, зарплаты, инвентарь.',
       classForColor: 'classForColorBlue',
       tagCardText: 'Module',
     },
-    {
-      icon: <BsDiagram2 className={clsx(styles.cardIcon, styles.colorLightOrange)} />,
-      title: 'Hub — mech.vin',
-      description: 'Единое ядро для владельца: клиенты, заказы, касса, зарплаты, инвентарь.',
-      classForColor: 'classForColorPurple',
-      tagCardText: 'Module',
-    },
-    {
-      icon: <BsBoxSeam className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
-      title: 'Flow — aimech',
-      description:
-        'Клиентское приложение: запись на услугу, утверждения, статусы, рекомендации, сервисная книга.',
-      classForColor: 'classForColorLightOrange',
-      tagCardText: 'Module',
-    },
+    // {
+    //   icon: <BsDiagram2 className={clsx(styles.cardIcon, styles.colorLightOrange)} />,
+    //   title: 'Hub — mech.vin',
+    //   description: 'Единое ядро для владельца: клиенты, заказы, касса, зарплаты, инвентарь.',
+    //   classForColor: 'classForColorPurple',
+    //   tagCardText: 'Module',
+    // },
+    // {
+    //   icon: <BsBoxSeam className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
+    //   title: 'Flow — aimech',
+    //   description:
+    //     'Клиентское приложение: запись на услугу, утверждения, статусы, рекомендации, сервисная книга.',
+    //   classForColor: 'classForColorLightOrange',
+    //   tagCardText: 'Module',
+    // },
     {
       icon: <BiBullseye className={clsx(styles.cardIcon, styles.colorYellow)} />,
-      title: 'Vision — AI‑відео',
-      description:
-        'Камеры контролируют приходы, простои, подозрительные действия. События → запросы автоматически.',
+      title: 'Vision',
+      description: 'Камеры контролируют машинозаезды, простои, фактическую стоимость нормочаса',
       classForColor: 'classForColorOrange',
       tagCardText: 'Module',
     },
@@ -60,7 +59,7 @@ export default function WhatDoWeHaveScreen() {
     },
     {
       icon: <LuLink className={clsx(styles.cardIcon, styles.colorPurple)} />,
-      title: 'Link  — інтеграції',
+      title: 'Link',
       description: 'Поставщики, платежи, камеры, API. Открытая платформа.',
       classForColor: 'classForColorPink',
       tagCardText: 'Module',
@@ -73,14 +72,14 @@ export default function WhatDoWeHaveScreen() {
       classForColor: 'classForColorYellow',
       tagCardText: 'Module',
     },
-    {
-      icon: <PiGlobeSimple className={clsx(styles.cardIcon, styles.colorBrown)} />,
-      title: 'WEB',
-      description:
-        'Расширение для браузера. Выбор запасных частей из CRM прямо на сайте поставщика.',
-      classForColor: 'classForColorBrown',
-      tagCardText: 'Module',
-    },
+    // {
+    //   icon: <PiGlobeSimple className={clsx(styles.cardIcon, styles.colorBrown)} />,
+    //   title: 'WEB',
+    //   description:
+    //     'Расширение для браузера. Выбор запасных частей из CRM прямо на сайте поставщика.',
+    //   classForColor: 'classForColorBrown',
+    //   tagCardText: 'Module',
+    // },
   ];
 
   return (

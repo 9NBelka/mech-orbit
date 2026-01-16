@@ -103,8 +103,8 @@ export default function IntegrationsBlock() {
       title: 'API',
       mainStatus: 'Link',
       tags: ['API', 'OAuth', 'Webhook'],
-      buttonText: 'Детали',
-      linkToButton: 'https://mech.APi',
+      // buttonText: 'Детали',
+      // linkToButton: 'https://mech.APi',
       list: [
         {
           pointTitle: 'База ЄДРТЗ',

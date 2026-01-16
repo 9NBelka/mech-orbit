@@ -28,8 +28,8 @@ export default function AboutUsScreenVinApp({ scrollToSection }) {
     },
     {
       icon: <LuBox className={clsx(styles.cardIcon, styles.colorPurple)} />,
-      title: 'Облік запчастин',
-      description: 'Сканування, замовлення та контроль запасних частин',
+      title: 'Наличие запчастей',
+      description: 'Обновление статуса наличия заказанных запчастей для каждого автомобиля',
       classForHover: 'classForHoverOrange',
     },
   ];
@@ -71,19 +71,19 @@ export default function AboutUsScreenVinApp({ scrollToSection }) {
             </div>
           </div>
           <div className={styles.buttons}>
-            {/* <Link to='/register' target='_blank' className={styles.button}>
-              Подключить
-            </Link> */}
+            <Link to='https://mech.vin' target='_blank' className={styles.button}>
+              Узнать больше <BsArrowRightShort className={styles.buttonIconTwo} />
+            </Link>
 
-            <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
+            {/* <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
               Подключить
-            </button>
-            <a href='https://crmmech.com/' target='_blank'>
+            </button> */}
+            {/* <a href='https://crmmech.com/' target='_blank'>
               <button className={clsx(styles.button, styles.buttonTwo)}>
-                Дивитись результати
+                Узнать больше
                 <BsArrowRightShort className={styles.buttonIconTwo} />
               </button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -47,8 +47,8 @@ export default function AboutUsScreen({ scrollToSection }) {
           </h3>
           <div className={styles.borderLine}></div>
           <p className={styles.textDescription}>
-            Автоматическая регистрация клиентов, выбор запчастей, интеграция с поставщиками, заказ
-            запчастей напрямую для автомобиля
+            Автоматическая регистрация клиентов, выбор запчастей, интеграция с поставщиками,
+            запчасти заказываются на автомобиль клиента, а не на склад
           </p>
           <div className={styles.imageAndIconBlocks}>
             <div className={styles.blockImageDashboard}>
@@ -74,16 +74,16 @@ export default function AboutUsScreen({ scrollToSection }) {
             </div>
           </div>
           <div className={styles.buttons}>
-            {/* <Link to='/register' target='_blank' className={styles.button}>
+            <Link to='/register' target='_blank' className={styles.button}>
               Подключить
-            </Link> */}
+            </Link>
 
-            <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
+            {/* <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
               Подключить
-            </button>
-            <a href='https://crmmech.com/' target='_blank'>
+            </button> */}
+            <a href='https://crmmech.com' target='_blank'>
               <button className={clsx(styles.button, styles.buttonTwo)}>
-                Дивитись результати
+                Узнать больше
                 <BsArrowRightShort className={styles.buttonIconTwo} />
               </button>
             </a>
