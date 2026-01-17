@@ -40,10 +40,10 @@ export default function AboutUsScreen({ scrollToSection }) {
         <div className={styles.textContent}>
           <div className={styles.tagBlock}>
             <GoDotFill className={styles.badgeIndicator} />
-            <p>владелец, менеджер, супервайзер</p>
+            <p>владелец, менеджер, руководитель</p>
           </div>
           <h3 className={styles.titleScreen}>
-            <span>CRMmech</span> - управление и бухгалтерия для автосервисов
+            <span>CRMmech</span> - управление и учёт для автосервисов
           </h3>
           <div className={styles.borderLine}></div>
           <p className={styles.textDescription}>

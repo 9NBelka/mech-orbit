@@ -252,37 +252,47 @@
 }
 
 .headline {
-  font-size: 3vw;
+  font-size: 1.8vw;
   color: var(--color-white);
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-bold);
-  line-height: var(--font-lineh-small);
+  line-height: var(--font-lineh-small2);
   letter-spacing: -0.025em;
   margin-top: 1vw;
 
   & .gradientText {
+    font-size: 3vw;
     background: linear-gradient(to right, rgba(59, 130, 246, 1), rgba(168, 85, 247, 1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    line-height: var(--font-lineh-small2);
   }
 }
 
 @media (max-width: 1024px) {
   .headline {
-    font-size: 7vw;
+    font-size: 5vw;
     letter-spacing: -0.025em;
     margin-top: 2vw;
     line-height: var(--font-lineh-small2);
+
+    & .gradientText {
+      font-size: 7vw;
+    }
   }
 }
 
 @media (max-width: 576px) {
   .headline {
-    font-size: 10vw;
+    font-size: 7vw;
     letter-spacing: -0.01em;
     margin-top: 5vw;
+
+    & .gradientText {
+      font-size: 11vw;
+    }
   }
 }
 
@@ -523,12 +533,26 @@
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-normal);
+
+  & .subDescription {
+    font-size: 1vw;
+    color: var(--color-light-gray);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-lineh-normal-another);
+    margin-top: 1vw;
+  }
 }
 
 @media (max-width: 1024px) {
   .note {
     margin-top: 3vw;
     font-size: 1.8vw;
+
+    & .subDescription {
+      font-size: 2.6vw;
+      margin-top: 2vw;
+    }
   }
 }
 
@@ -536,6 +560,11 @@
   .note {
     margin-top: 5vw;
     font-size: 3.6vw;
+
+    & .subDescription {
+      font-size: 4.6vw;
+      margin-top: 4vw;
+    }
   }
 }
 

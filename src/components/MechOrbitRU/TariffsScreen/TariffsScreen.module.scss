@@ -33,6 +33,30 @@
   }
 }
 
+.containerForTariffs {
+  width: 65vw;
+  margin: 0 auto;
+
+  &.tariffsTabletAndPhone {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .containerForTariffs {
+    width: 90vw;
+    margin: 0 auto;
+
+    &.tariffsPc {
+      display: none;
+    }
+
+    &.tariffsTabletAndPhone {
+      display: flex;
+    }
+  }
+}
+
 .neonCircle {
   position: absolute;
   border-radius: 50%;

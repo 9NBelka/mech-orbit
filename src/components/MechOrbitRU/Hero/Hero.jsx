@@ -25,14 +25,11 @@ const Hero = ({ scrollToSection }) => {
             <p>OS прибыльного автосервиса</p>
           </div>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Операционная система</span> <br />
-            для прибыльного автосервиса
+            <span className={styles.gradientText}>Три продукта. Одна система.</span> <br />
+            От заезда автомобиля — до прибыли автосервиса.
           </h1>
 
           <div className={styles.descriptionBlock}>
-            <p className={styles.subDescription}>
-              Три продукта. Одна система. От заезда автомобиля — до прибыли автосервиса.
-            </p>
             <p className={styles.descriptionTitle}>
               MECH связывает клиента, механика и владельца в единую систему управления автосервисом.
             </p>
@@ -45,9 +42,6 @@ const Hero = ({ scrollToSection }) => {
                 </p>
               </div>
             ))}
-            <p className={styles.subDescription}>
-              Одна экосистема. Полный контроль. Прогнозируемый результат.
-            </p>
           </div>
           <div className={styles.buttons}>
             <Link to='/register' target='_blank'>
@@ -66,10 +60,13 @@ const Hero = ({ scrollToSection }) => {
             </button> */}
           </div>
           <div className={styles.note}>
-            Единая система, в которой работа, люди, видеонаблюдение, запасные части, платежи и
+            {/* Единая система, в которой работа, люди, видеонаблюдение, запасные части, платежи и
             клиенты связаны между собой. От камеры до кассового аппарата — все процессы
             функционируют вокруг единого ядра, без перерывов и хаоса. Владелец видит прибыль. Техник
-            имеет четкий план. Клиент получает прозрачность и скорость.
+            имеет четкий план. Клиент получает прозрачность и скорость. */}
+            <p className={styles.subDescription}>
+              Одна экосистема. Полный контроль. Прогнозируемый результат.
+            </p>
           </div>
         </div>
         <div className={styles.visualContent}>

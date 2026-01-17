@@ -6,6 +6,7 @@ import { GoGraph } from 'react-icons/go';
 import { BsShopWindow } from 'react-icons/bs';
 import Tariffs from './Tariffs/Tariffs';
 import TryToStartScreen from './TryToStartScreen/TryToStartScreen';
+import TariffsTabletAndMobile from './TariffsTabletAndMobile/TariffsTabletAndMobile';
 
 export default function TariffsScreen() {
   const [isOn, setIsOn] = useState(false);
@@ -44,7 +45,12 @@ export default function TariffsScreen() {
           </div>
         </div>
       </div>
-      <Tariffs isOn={isOn} getDisplayPrice={getDisplayPrice} />
+      <div className={clsx(styles.containerForTariffs, styles.tariffsPc)}>
+        <Tariffs isOn={isOn} getDisplayPrice={getDisplayPrice} />
+      </div>
+      <div className={clsx(styles.containerForTariffs, styles.tariffsTabletAndPhone)}>
+        <TariffsTabletAndMobile isOn={isOn} getDisplayPrice={getDisplayPrice} />
+      </div>
       <div className={clsx(styles.neonCircle, styles.bluePrint)}></div>
     </section>
   );

@@ -5,57 +5,6 @@
   z-index: 3;
 }
 
-.sliderWrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sliderViewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-.arrow {
-  position: absolute;
-  z-index: 5;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 50%;
-  background: rgba(24, 24, 24, 0.9);
-  border: 0.01vw solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.2s ease;
-
-  & .arrowIcon {
-    width: 1.2vw;
-    height: 1.2vw;
-    fill: white;
-  }
-
-  &:hover {
-    background: rgba(60, 60, 60, 0.9);
-  }
-
-  &:disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
-}
-
-.left {
-  left: -3vw;
-}
-
-.right {
-  right: -3vw;
-}
-
 .cards {
   display: flex;
   flex-direction: row;
@@ -64,13 +13,27 @@
   width: 100vw;
   padding-bottom: 1vw;
   transition: transform 0.4s ease;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 
-  & .card {
-    flex: 0 0 25vw;
+  // Скрываем скроллбар визуально, но оставляем функционал
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   & .card {
-    flex: 0 0 20vw; // фиксированная ширина карточки
+    flex: 0 0 20vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -337,18 +300,6 @@
     width: 100vw;
     padding-bottom: 1vw;
 
-    // Отступ слева
-    &::before {
-      content: '';
-      flex: 0 0 5vw;
-    }
-
-    // Отступ справа
-    &::after {
-      content: '';
-      flex: 0 0 5vw;
-    }
-
     & .card {
       flex: 0 0 25vw;
     }
@@ -497,18 +448,6 @@
     margin-top: 6vw;
     width: 100vw;
     padding-bottom: 1vw;
-
-    // Отступ слева
-    &::before {
-      content: '';
-      flex: 0 0 1vw;
-    }
-
-    // Отступ справа
-    &::after {
-      content: '';
-      flex: 0 0 1vw;
-    }
 
     & .card {
       flex: 0 0 5vw;

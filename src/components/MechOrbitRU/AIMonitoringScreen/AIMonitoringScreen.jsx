@@ -26,8 +26,8 @@ export default function AIMonitoringScreen({ scrollToSection }) {
       <div className={styles.container}>
         <div className={styles.textContent}>
           <h3 className={styles.titleScreen}>
-            <span className={styles.gradientText}>Мониторинг ИИ:</span> расчет камеры для вашей
-            сервисной станции
+            <span className={styles.gradientText}>Мониторинг ИИ:</span> расчет камеры для вашего
+            автосервиса
           </h3>
           <div className={styles.borderLine}></div>
         </div>
@@ -43,8 +43,9 @@ export default function AIMonitoringScreen({ scrollToSection }) {
                   Основная рекомендация:
                   <span>
                     {' '}
-                    одна камера спереди автомобиля для каждого поста, плюс одна обзорная камера в
-                    кузове. Таким образом, система сможет видеть номер, движение и время простоя.
+                    одна камера спереди автомобиля для каждого поста, плюс одна обзорная камера для
+                    всего помещения. Таким образом, система сможет видеть номер, движение и время
+                    простоя.
                   </span>
                 </h6>
               </div>

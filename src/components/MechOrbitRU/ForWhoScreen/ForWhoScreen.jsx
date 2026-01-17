@@ -42,8 +42,8 @@ export default function ForWhoScreen() {
           </h3>
           <div className={styles.borderLine}></div>
           <p className={styles.textDescription}>
-            Mech подходит как для небольших независимых сервисных станций и сетей, так и для новых
-            проектов, которые хотят построить свой бизнес с самого начала.
+            Mech подходит как для небольших автосервисов, так и крупных сетей, с помощью системы
+            обучения, встроенной внутри продукта MECH - старт работы лёгкий и понятный.
           </p>
         </div>
         <div className={styles.cardsInfo}>
