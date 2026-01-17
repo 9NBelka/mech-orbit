@@ -156,7 +156,7 @@ export default function Login() {
       <div className={styles.rightSide}>
         <div className={styles.formContainer}>
           <h2 className={styles.formTitle}>Вхід</h2>
-          <p className={styles.welcome}>Welcome to Assist CONTROL</p>
+          {/* <p className={styles.welcome}>Welcome to Assist CONTROL</p> */}
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
               <label className={styles.label}>Email</label>
