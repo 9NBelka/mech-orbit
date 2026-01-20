@@ -152,7 +152,7 @@
 @media (max-width: 576px) {
   .cardAndInfo {
     flex-direction: column;
-    gap: 9vw;
+    gap: 6vw;
     margin-top: 5vw;
   }
 }
@@ -616,6 +616,10 @@
     margin-top: 3vw;
     transition: 0.3s ease-in-out;
 
+    &.infoButtonPhone {
+      display: none;
+    }
+
     &:hover {
       box-shadow: 0 0 0.5vw var(--color-blue);
     }
@@ -669,6 +673,7 @@
 @media (max-width: 576px) {
   .infoBlock {
     & .infoList {
+      flex-direction: column-reverse;
       gap: 4vw;
     }
 
@@ -686,11 +691,16 @@
     }
 
     & .infoButton {
+      display: none;
       padding: 4vw 0vw;
       font-size: 3.6vw;
       border-radius: 1vw;
       gap: 1vw;
-      margin-top: 5vw;
+      margin-top: 0vw;
+
+      &.infoButtonPhone {
+        display: flex;
+      }
 
       & .buttonIcon {
         width: 4vw;

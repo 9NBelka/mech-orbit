@@ -157,6 +157,13 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
                 🚀 Спробувати 14 днів за 0 грн
                 <MdOutlineKeyboardArrowRight className={styles.buttonIcon} />
               </Link>
+              <Link
+                to={'/register'}
+                target='_blank'
+                className={clsx(styles.infoButton, styles.infoButtonPhone)}>
+                Войти
+                <MdOutlineKeyboardArrowRight className={styles.buttonIcon} />
+              </Link>
             </div>
           </div>
         </div>
