@@ -6,8 +6,88 @@ import clsx from 'clsx';
 import { loginRequest } from '../../api/auth';
 import { googleLoginRequest } from '../../api/auth';
 import { BsArrowLeftShort } from 'react-icons/bs';
+import { useOutletContext } from 'react-router-dom';
+import LangLink from '../../components/LangLink/LangLink';
+
+const translations = {
+  ua: {
+    title: 'Реєстрація',
+    titleSub: 'автосервісу',
+    description:
+      'CRMmech допомагає відстежувати клієнтів, персонал та фінанси в реальному часі — з відеоаналітикою та штучним інтелектом',
+    businessText: 'Всі права захищені.',
+
+    titleForm: 'Вхід',
+    emailLabel: 'Email',
+    passwordLabel: 'Пароль',
+    buttonLogin: 'Увійти',
+    anotherLoginText: 'Або увійдіть за допомогою',
+    buttonLoginGogle: 'Вхід через Google',
+
+    noAccountText: 'Немає акаунта?',
+    registerLink: 'Зареєструватися',
+
+    errorInvalidEmail: 'Невірний email',
+    errorRequiredEmail: "Email обов'язковий",
+    errorMinPassword: 'Мін. 6 символів',
+    errorRequiredPassword: "Пароль обов'язковий",
+    errorLoginFailed: 'Невірний email або пароль',
+    errorLoginFailedGoogle: 'Помилка авторизації через Google',
+  },
+  ru: {
+    title: 'Регистрация',
+    titleSub: 'автосервиса',
+    description:
+      'CRMmech помогает отслеживать клиентов, персонал и финансы в реальном времени — с видеоаналитикой и искусственным интеллектом',
+    businessText: 'Все права защищены.',
+
+    titleForm: 'Вход',
+    emailLabel: 'Email',
+    passwordLabel: 'Пароль',
+    buttonLogin: 'Войти',
+    anotherLoginText: 'Или войдите с помощью',
+    buttonLoginGogle: 'Вход через Google',
+
+    noAccountText: 'Нет аккаунта?',
+    registerLink: 'Зарегистрироваться',
+
+    errorInvalidEmail: 'Неверный email',
+    errorRequiredEmail: 'Email обязателен',
+    errorMinPassword: 'Мин. 6 символов',
+    errorRequiredPassword: 'Пароль обязателен',
+    errorLoginFailed: 'Неверный email или пароль',
+    errorLoginFailedGoogle: 'Ошибка авторизации через Google',
+  },
+  en: {
+    title: 'Car Service',
+    titleSub: 'Registration',
+    description:
+      'CRMmech helps track customers, staff, and finances in real time — powered by video analytics and artificial intelligence',
+    businessText: 'All rights reserved.',
+
+    titleForm: 'Login',
+    emailLabel: 'Email',
+    passwordLabel: 'Password',
+    buttonLogin: 'Sign in',
+    anotherLoginText: 'Or sign in with',
+    buttonLoginGogle: 'Sign in with Google',
+
+    noAccountText: 'Don’t have an account?',
+    registerLink: 'Sign up',
+
+    errorInvalidEmail: 'Invalid email',
+    errorRequiredEmail: 'Email is required',
+    errorMinPassword: 'Min. 6 characters',
+    errorRequiredPassword: 'Password is required',
+    errorLoginFailed: 'Incorrect email or password',
+    errorLoginFailedGoogle: 'Google authorization error',
+  },
+};
 
 export default function Login() {
+  const { currentLang } = useOutletContext();
+  const translationsText = translations[currentLang] || translations.ua;
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -30,10 +110,18 @@ export default function Login() {
       setErrors((prev) => {
         const newErrors = { ...prev };
         if (name === 'email') {
-          newErrors.email = value ? (validateEmail(value) ? '' : 'Невірний email') : '';
+          newErrors.email = value
+            ? validateEmail(value)
+              ? ''
+              : translationsText.errorInvalidEmail
+            : '';
         }
         if (name === 'password') {
-          newErrors.password = value ? (value.length < 6 ? 'Мін. 6 символів' : '') : '';
+          newErrors.password = value
+            ? value.length < 6
+              ? translationsText.errorMinPassword
+              : ''
+            : '';
         }
         return newErrors;
       });
@@ -46,13 +134,21 @@ export default function Login() {
     if (name === 'email') {
       setErrors((prev) => ({
         ...prev,
-        email: value ? (validateEmail(value) ? '' : 'Невірний email') : "Email обов'язковий",
+        email: value
+          ? validateEmail(value)
+            ? ''
+            : translationsText.errorInvalidEmail
+          : translationsText.errorRequiredEmail,
       }));
     }
     if (name === 'password') {
       setErrors((prev) => ({
         ...prev,
-        password: value ? (value.length < 6 ? 'Мін. 6 символів' : '') : "Пароль обов'язковий",
+        password: value
+          ? value.length < 6
+            ? translationsText.errorMinPassword
+            : ''
+          : translationsText.errorRequiredPassword,
       }));
     }
   };
@@ -62,10 +158,10 @@ export default function Login() {
 
     const newErrors = {};
     if (!formData.email || !validateEmail(formData.email)) {
-      newErrors.email = 'Невірний email';
+      newErrors.email = translationsText.errorInvalidEmail;
     }
     if (!formData.password || formData.password.length < 6) {
-      newErrors.password = 'Мін. 6 символів';
+      newErrors.password = translationsText.errorMinPassword;
     }
 
     setErrors(newErrors);
@@ -83,8 +179,8 @@ export default function Login() {
       console.error(err);
 
       setErrors({
-        email: 'Невірний email або пароль',
-        password: 'Невірний email або пароль',
+        email: translationsText.errorLoginFailed,
+        password: translationsText.errorLoginFailed,
       });
     }
   };
@@ -112,7 +208,7 @@ export default function Login() {
           navigate('https://app.crmmech.com/video-control');
         } catch (error) {
           console.error('Google login error:', error);
-          alert('Помилка авторизації через Google');
+          alert(translationsText.errorLoginFailedGoogle);
         }
       },
     });
@@ -131,35 +227,33 @@ export default function Login() {
         </p>
         <div className={styles.content}>
           <h1 className={styles.title}>
-            Реєстрація <span className={styles.highlight}>автосервісу</span>
+            {translationsText.title}{' '}
+            <span className={styles.highlight}>{translationsText.titleSub}</span>
           </h1>
 
           <div className={styles.screenshotWrapper}>
             <img
-              src='images/mech-orbit-screen-dashboard.webp'
+              src='/images/mech-orbit-screen-dashboard.webp'
               alt='CRMmech інтерфейс'
               className={styles.screenshot}
             />
           </div>
 
-          <p className={styles.description}>
-            CRMmech допомагає відстежувати клієнтів, персонал та фінанси в реальному часі — з
-            відеоаналітикою та штучним інтелектом
-          </p>
+          <p className={styles.description}>{translationsText.description}</p>
 
           <footer className={styles.footer}>
-            &copy; {currentYear} CRMmech. Всі права захищені.
+            &copy; {currentYear} {translationsText.businessText}
           </footer>
         </div>
       </div>
 
       <div className={styles.rightSide}>
         <div className={styles.formContainer}>
-          <h2 className={styles.formTitle}>Вхід</h2>
+          <h2 className={styles.formTitle}>{translationsText.titleForm}</h2>
           {/* <p className={styles.welcome}>Welcome to Assist CONTROL</p> */}
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
-              <label className={styles.label}>Email</label>
+              <label className={styles.label}>{translationsText.emailLabel}</label>
               <div className={styles.inputWrapper}>
                 <input
                   type='email'
@@ -178,7 +272,7 @@ export default function Login() {
             </div>
 
             <div className={styles.field}>
-              <label className={styles.label}>Пароль</label>
+              <label className={styles.label}>{translationsText.passwordLabel}</label>
               <div className={styles.inputWrapper}>
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -213,21 +307,21 @@ export default function Login() {
               type='submit'
               className={clsx(styles.submitBtn, !isFormValid && styles.disabledBtn)} // Додаємо disabled стиль
               disabled={!isFormValid}>
-              Увійти
+              {translationsText.buttonLogin}
             </button>
           </form>
           <div className={styles.divider}>
-            <span>Або увійдіть за допомогою</span>
+            <span>{translationsText.anotherLoginText}</span>
           </div>
           <button type='button' onClick={handleGoogleLogin} className={styles.googleBtn}>
             <img src='https://www.google.com/favicon.ico' alt='Google' />
-            Sign in with Google
+            {translationsText.buttonLoginGogle}
           </button>
           <p className={styles.signup}>
-            Немає акаунта?{' '}
-            <Link to={'/register'} className={styles.signupLink}>
-              Зареєструватися
-            </Link>
+            {translationsText.noAccountText}{' '}
+            <LangLink to={'/register'} className={styles.signupLink}>
+              {translationsText.registerLink}
+            </LangLink>
           </p>
         </div>
       </div>

@@ -26,21 +26,21 @@ export default function TariffsScreen() {
       <TryToStartScreen isOn={isOn} getDisplayPrice={getDisplayPrice} />
       <div className={styles.container}>
         <div className={styles.textContent}>
-          <h3 className={styles.titleScreen}>Тарифи</h3>
+          <h3 className={styles.titleScreen}>Тарифы</h3>
           <div className={styles.borderLine}></div>
           <p className={styles.textDescription}>
-            Все включено: камери, CRM, додатки, підтримка. Безкоштовний тест: 14 днів, без картки.
+            Всё включено: камеры, CRM, приложения, поддержка. Бесплатный тест: 14 дней, без карты.
           </p>
           <div className={styles.descriptionAndButtonChangeBlock}>
-            <p className={styles.descriptionChangeBlock}>Раз на місяць</p>
+            <p className={styles.descriptionChangeBlock}>Раз в месяц</p>
             <div
               className={clsx(styles.toggleSwitch, isOn ? 'on' : 'off')}
               onClick={() => setIsOn(!isOn)}>
               <div className={styles.toggleCircle} />
             </div>
-            <p className={styles.descriptionChangeBlock}>за рік</p>
+            <p className={styles.descriptionChangeBlock}>за год</p>
             <div className={styles.discountGradientBlock}>
-              <p className={clsx(styles.textDiscount, isOn && styles.textDiscounON)}>20% знижка</p>
+              <p className={clsx(styles.textDiscount, isOn && styles.textDiscounON)}>20% скидка</p>
             </div>
           </div>
         </div>

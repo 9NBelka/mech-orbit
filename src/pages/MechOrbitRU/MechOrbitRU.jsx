@@ -20,7 +20,7 @@ export default function MechOrbitRU({ isScrolled, scrollToSection }) {
       linkToPage: 'product',
     },
     {
-      title: 'Рішення',
+      title: 'Решение',
       linkToPage: 'solution',
     },
     {
@@ -28,15 +28,15 @@ export default function MechOrbitRU({ isScrolled, scrollToSection }) {
       linkToPage: 'calculator',
     },
     {
-      title: 'Інтеграції',
+      title: 'Интеграции',
       linkToPage: 'integrations',
     },
     {
-      title: 'Тарифи',
+      title: 'Тарифы',
       linkToPage: 'price',
     },
     {
-      title: 'Контакти',
+      title: 'Контакты',
       linkToPage: 'contacts',
     },
   ];
@@ -48,6 +48,7 @@ export default function MechOrbitRU({ isScrolled, scrollToSection }) {
         isScrolled={isScrolled}
         scrollToSection={scrollToSection}
         onFooterAndHeaderTextLinksMain={onFooterAndHeaderTextLinksMain}
+        currentLang='ru'
       />
       <main>
         <Hero scrollToSection={scrollToSection} />

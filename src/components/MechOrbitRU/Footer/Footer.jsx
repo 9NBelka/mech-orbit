@@ -12,6 +12,7 @@ import {
   BsTwitter,
 } from 'react-icons/bs';
 import { FaWhatsapp } from 'react-icons/fa';
+import LangLink from '../../../components/LangLink/LangLink';
 
 export default function Footer({ onFooterAndHeaderTextLinksMain }) {
   const currentYear = new Date().getFullYear();
@@ -32,16 +33,16 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
             <div className={styles.logoAndAnotherTextBlock}>
               <div className={styles.logo}>MECHORBIT</div>
               <p className={styles.slogan}>#Taking back control</p>
-              <p className={styles.description}>Операційна система для автосервісів</p>
+              <p className={styles.description}>Операционная система для автосервисов</p>
             </div>
             <a className={styles.button} onClick={() => scrollToSection('tryToStart')}>
-              Запросити демо
+              Запросить демо
             </a>
           </div>
 
           <div className={styles.linksAndServicesBlock}>
             <div className={styles.linksSection}>
-              <h4>Навігація</h4>
+              <h4>Навигация</h4>
               <ul>
                 {onFooterAndHeaderTextLinksMain.map((info, idx) => (
                   <li key={idx}>
@@ -74,21 +75,21 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
               <h4>MECH Partners</h4>
               <ul>
                 <li>
-                  <a href='/CRMmech'>Постачальники</a>
+                  <a href='/CRMmech'>Поставщики</a>
                 </li>
                 <li>
                   <a href='/MechVin' className={styles.linkOff}>
-                    Реселлери
+                    Реселлеры
                   </a>
                 </li>
                 <li>
                   <a href='/AIMech' className={styles.linkOff}>
-                    Інтегратори
+                    Интеграторы
                   </a>
                 </li>
                 <li>
                   <a href='/AIMech' className={styles.linkOff}>
-                    Франчайзі
+                    Франчайзи
                   </a>
                 </li>
               </ul>
@@ -98,18 +99,18 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
               <h4>MECH Capital</h4>
               <ul>
                 <li>
-                  <a href='/CRMmech'>Інвестору</a>
+                  <a href='/CRMmech'>Инвестору</a>
                 </li>
                 <li>
                   <a href='/MechVin' className={styles.linkOff}>
-                    Автосервісам
+                    Автосервисам
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className={styles.contactSection}>
-              <h4>Контакти</h4>
+              <h4>Контакты</h4>
               <div className={styles.contactList}>
                 <a href='mailto:hello@mechorbit.com' className={styles.contactLink} target='_blank'>
                   <BsEnvelope className={styles.footerContactIcon} />
@@ -121,11 +122,11 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
                 </a>
                 <a className={styles.contactLink} target='_blank'>
                   <BsGeoAlt className={styles.footerContactIcon} />
-                  Україна / Естонія
+                  Украина / Естония
                 </a>
               </div>
               <div className={styles.social}>
-                <h5>Соціальні мережі</h5>
+                <h5>Социальные сети</h5>
                 <div className={styles.socialLinks}>
                   <a href='#' aria-label='Facebook' target='_blank'>
                     <BsFacebook className={styles.footerSocialIcon} />
@@ -147,7 +148,7 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
 
         <div className={styles.bottom}>
           <div className={styles.copyright}>
-            <p>&copy; {currentYear} MECHORBIT. Всі права захищені.</p>
+            <p>&copy; {currentYear} MECHORBIT. Все права защищены.</p>
           </div>
 
           <div className={styles.socialsTags}>
@@ -155,14 +156,14 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
           </div>
         </div>
         <div className={styles.legal}>
-          <a href='/privacy-policy' target='_blank' rel='noopener noreferrer'>
-            Політика конфіденційності
+          <LangLink to='/privacy-policy' target='_blank' rel='noopener noreferrer'>
+            Политика конфиденциальности
+          </LangLink>
+          <a href='/documents/terms-of-use.pdf' download='Условия_использования.pdf'>
+            Условия использования
           </a>
-          <a href='/documents/terms-of-use.pdf' download='Умови_використання.pdf'>
-            Умови використання
-          </a>
-          <a href='/documents/offer-agreement.pdf' download='Договір_оферти.pdf'>
-            Договір оферти
+          <a href='/documents/offer-agreement.pdf' download='Договор_оферты.pdf'>
+            Договор оферты
           </a>
         </div>
       </div>

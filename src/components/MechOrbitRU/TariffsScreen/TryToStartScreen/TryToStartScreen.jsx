@@ -10,7 +10,7 @@ import {
 } from 'react-icons/bs';
 import { IoMdCheckmark } from 'react-icons/io';
 import { TbCopyleft } from 'react-icons/tb';
-import { Link } from 'react-router-dom';
+import LangLink from '../../../../components/LangLink/LangLink';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 export default function TryToStartScreen({ isOn, getDisplayPrice }) {
@@ -24,34 +24,34 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
       buttonText: 'Протестировать',
       list: [
         {
-          pointTitle: 'AI‑відео',
+          pointTitle: 'AI‑видео',
           greyColor: true,
         },
         {
-          pointTitle: 'CRM / Облік / Склади',
+          pointTitle: 'CRM / Учёт / Склады',
           pointStatus: '2',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Інтеграція - постачальники',
+          pointTitle: 'Интеграция – поставщики',
           pointStatus: '3',
           pointIcon: <BsPuzzleFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток механіка',
+          pointTitle: 'Приложение механика',
           pointStatus: '2',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток клієнта',
+          pointTitle: 'Приложение клиента',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Аналітика',
+          pointTitle: 'Аналитика',
         },
         {
-          pointTitle: 'WEB розширення',
+          pointTitle: 'WEB расширение',
           greyColor: true,
         },
       ],
@@ -60,16 +60,16 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
 
   const infoList = [
     {
-      point: 'Без прив`язки картки та автоматичних списань',
+      point: 'Без привязки карты и автоматических списаний',
     },
     {
-      point: 'Повний функціонал для повноцінної роботи',
+      point: 'Полный функционал для полноценной работы',
     },
     {
-      point: 'Персональна консультація по налаштуванню',
+      point: 'Персональная консультация по настройке',
     },
     {
-      point: 'Доступ до AI-аналітики та всіх ключових модулів.',
+      point: 'Доступ к AI-аналитике и всем ключевым модулям.',
     },
   ];
   return (
@@ -77,10 +77,10 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
       <div className={styles.container}>
         <div className={styles.textContent}>
           <h3 className={styles.titleScreen}>
-            Спробуйте <span>Start</span> безкоштовно
+            Попробуйте <span>Start</span> бесплатно
           </h3>
           <div className={styles.borderLine}></div>
-          <p className={styles.textDescription}>Безкоштовний тест: 14 днів, без картки.</p>
+          <p className={styles.textDescription}>Бесплатный тест: 14 дней, без карты.</p>
         </div>
 
         <div className={styles.cardAndInfo}>
@@ -100,7 +100,7 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
                   <div className={styles.blockPrice}>
                     <p className={styles.textPrice}>
                       ₴{getDisplayPrice(info.price)}
-                      <span>14 днів</span>
+                      <span>14 дней</span>
                     </p>
                   </div>
 
@@ -153,17 +153,17 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
                   <p className={styles.infoText}>{info.point}</p>
                 </div>
               ))}
-              <Link to={'/register'} target='_blank' className={styles.infoButton}>
-                🚀 Спробувати 14 днів за 0 грн
+              <LangLink to={'/register'} target='_blank' className={styles.infoButton}>
+                🚀 Попробовать 14 дней за 0 грн
                 <MdOutlineKeyboardArrowRight className={styles.buttonIcon} />
-              </Link>
-              <Link
+              </LangLink>
+              <LangLink
                 to={'/register'}
                 target='_blank'
                 className={clsx(styles.infoButton, styles.infoButtonPhone)}>
                 Войти
                 <MdOutlineKeyboardArrowRight className={styles.buttonIcon} />
-              </Link>
+              </LangLink>
             </div>
           </div>
         </div>

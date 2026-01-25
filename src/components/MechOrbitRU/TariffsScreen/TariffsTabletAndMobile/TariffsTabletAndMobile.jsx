@@ -26,117 +26,117 @@ export default function TariffsTabletAndMobile({ isOn, getDisplayPrice }) {
       buttonText: 'Выбрать Start',
       list: [
         {
-          pointTitle: 'AI‑відео',
+          pointTitle: 'AI‑видео',
           greyColor: true,
         },
         {
-          pointTitle: 'CRM / Облік / Склади',
+          pointTitle: 'CRM / Учёт / Склады',
           pointStatus: '2',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Інтеграція - постачальники',
+          pointTitle: 'Интеграция – поставщики',
           pointStatus: '3',
           pointIcon: <BsPuzzleFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток механіка',
+          pointTitle: 'Приложение механика',
           pointStatus: '2',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток клієнта',
+          pointTitle: 'Приложение клиента',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Аналітика',
+          pointTitle: 'Аналитика',
         },
         {
-          pointTitle: 'WEB розширення',
+          pointTitle: 'WEB расширение',
           greyColor: true,
         },
       ],
     },
     {
       title: 'Profi',
-      mainStatus: '4 - 8 пости',
+      mainStatus: '4 - 8 постов',
       mainStatusIcon: <BsShopWindow className={styles.badgeIndicator} />,
       price: 4390,
       tags: [' iOS/', 'Android'],
       buttonText: 'Выбрать Profi',
       list: [
         {
-          pointTitle: 'AI‑відео',
+          pointTitle: 'AI‑видео',
           pointStatus: '10',
           pointIcon: <BsCameraVideo className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'CRM / Облік / Склади',
+          pointTitle: 'CRM / Учёт / Склады',
           pointStatus: '8',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Інтеграція - постачальники',
+          pointTitle: 'Интеграция – поставщики',
           pointStatus: '20',
           pointIcon: <BsPuzzleFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток механіка',
+          pointTitle: 'Приложение механика',
           pointStatus: '20',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток клієнта',
+          pointTitle: 'Приложение клиента',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Аналітика',
+          pointTitle: 'Аналитика',
         },
         {
-          pointTitle: 'WEB розширення',
+          pointTitle: 'WEB расширение',
         },
       ],
     },
     {
       title: 'Full',
-      mainStatus: '1 - 3 пости',
+      mainStatus: '1 - 3 поста',
       mainStatusIcon: <BsShopWindow className={styles.badgeIndicator} />,
       price: 2990,
       tags: [' iOS/', 'Android'],
       buttonText: 'Выбрать Full',
       list: [
         {
-          pointTitle: 'AI‑відео',
+          pointTitle: 'AI‑видео',
           pointStatus: '4',
           pointIcon: <BsCameraVideo className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'CRM / Облік / Склади',
+          pointTitle: 'CRM / Учёт / Склады',
           pointStatus: '4',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Інтеграція - постачальники',
+          pointTitle: 'Интеграция – поставщики',
           pointStatus: '10',
           pointIcon: <BsPuzzleFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток механіка',
+          pointTitle: 'Приложение механика',
           pointStatus: '6',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток клієнта',
+          pointTitle: 'Приложение клиента',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Аналітика',
+          pointTitle: 'Аналитика',
         },
         {
-          pointTitle: 'WEB розширення',
+          pointTitle: 'WEB расширение',
         },
       ],
     },
@@ -150,35 +150,35 @@ export default function TariffsTabletAndMobile({ isOn, getDisplayPrice }) {
       buttonText: 'Выбрать Maximal',
       list: [
         {
-          pointTitle: 'AI‑відео',
+          pointTitle: 'AI‑видео',
           pointStatus: '∞',
           pointIcon: <BsCameraVideo className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'CRM / Облік / Склади',
+          pointTitle: 'CRM / Учёт / Склады',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Інтеграція - постачальники',
+          pointTitle: 'Интеграция – поставщики',
           pointStatus: '∞',
           pointIcon: <BsPuzzleFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток механіка',
+          pointTitle: 'Приложение механика',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток клієнта',
+          pointTitle: 'Приложение клиента',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Аналітика',
+          pointTitle: 'Аналитика',
         },
         {
-          pointTitle: 'WEB розширення',
+          pointTitle: 'WEB расширение',
         },
       ],
     },
@@ -191,36 +191,36 @@ export default function TariffsTabletAndMobile({ isOn, getDisplayPrice }) {
       buttonText: 'Выбрать Network',
       list: [
         {
-          pointTitle: 'AI‑відео',
+          pointTitle: 'AI‑видео',
           pointStatus: '∞',
           pointIcon: <BsCameraVideo className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'CRM / Облік / Склади',
+          pointTitle: 'CRM / Учёт / Склады',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Інтеграція - постачальники',
+          pointTitle: 'Интеграция – поставщики',
           pointStatus: '∞',
           pointIcon: <BsPuzzleFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток механіка',
+          pointTitle: 'Приложение механика',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Додаток клієнта',
+          pointTitle: 'Приложение клиента',
           pointStatus: '∞',
           pointIcon: <BsPersonFill className={styles.pointListBadgeIndicator} />,
         },
         {
-          pointTitle: 'Аналітика',
+          pointTitle: 'Аналитика',
           pointStatus: 'BETA',
         },
         {
-          pointTitle: 'WEB розширення',
+          pointTitle: 'WEB расширение',
         },
       ],
     },

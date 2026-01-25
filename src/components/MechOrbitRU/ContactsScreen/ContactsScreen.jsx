@@ -12,11 +12,11 @@ export default function ContactsScreen() {
         <div className={styles.contactsAndFormBlock}>
           <div className={styles.textContent}>
             <h3 className={styles.titleScreen}>
-              Хочете керований і <span>прибутковий</span> автосервіс?
+              Хотите управляемый и <span>прибыльный</span> автосервис?
             </h3>
             <p className={styles.textDescription}>
-              Залиште контакти і ми запропонуємо формат впровадження саме під ваш сервіс: з
-              урахуванням поточного масштабу команди та цілей.
+              Оставьте контакты и мы предложим формат внедрения именно под ваш сервис: с учетом
+              текущего масштаба команды и целей.
             </p>
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
@@ -64,7 +64,7 @@ export default function ContactsScreen() {
                     <BsTelegram className={styles.contactIcon} />
                   </div>
                   <div>
-                    <p className={styles.contactItemTitleMini}>Телеграм</p>
+                    <p className={styles.contactItemTitleMini}>Телеграмм</p>
                     <a href='https://t.me/mechorbit' target='_blank'>
                       <p className={styles.contactItemTextMini}>@mechorbit</p>
                     </a>

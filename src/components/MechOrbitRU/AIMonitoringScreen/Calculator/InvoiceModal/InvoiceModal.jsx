@@ -4,7 +4,6 @@ import { BsX } from 'react-icons/bs';
 import emailjs from '@emailjs/browser';
 
 export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
-  // ← Принимаем пропс
   const [formData, setFormData] = useState({
     companyName: '',
     ipn: '',
@@ -29,17 +28,17 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
     const newErrors = {};
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email обов'язковий";
+      newErrors.email = 'Email обязателен';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Невірний формат email';
+      newErrors.email = 'Неверный формат email';
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Телефон обов'язковий";
+      newErrors.phone = 'Телефон обязателен';
     } else {
       const digits = formData.phone.replace(/\D/g, '');
       if (digits.length < 9) {
-        newErrors.phone = 'Номер має містити мінімум 9 цифр';
+        newErrors.phone = 'Номер должен содержать минимум 9 цифр';
       }
     }
 
@@ -67,9 +66,9 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
     });
 
     const templateParams = {
-      companyName: formData.companyName || 'Не вказано',
-      ipn: formData.ipn || 'Не вказано',
-      address: formData.address || 'Не вказано',
+      companyName: formData.companyName || 'Не указано',
+      ipn: formData.ipn || 'Не указано',
+      address: formData.address || 'Не указано',
       email: formData.email,
       phone: formData.phone,
       totalCost: formattedPrice, // ← Добавляем сумму!
@@ -80,7 +79,7 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
     try {
       await emailjs.send(serviceID, templateID, templateParams, userID);
 
-      alert('Рахунок успішно відправлено на belka.nik02@gmail.com!');
+      alert('Счет успешно отправлен на belka.nik02@gmail.com!');
       onClose();
       setFormData({
         companyName: '',
@@ -92,14 +91,14 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
       setErrors({});
     } catch (error) {
       console.error('EmailJS error:', error);
-      alert('Помилка відправки. Спробуйте ще раз.');
+      alert('Ошибка отправки. Попытайтесь еще раз.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handlePayCard = () => {
-    alert('Перехід до оплати карткою... (тут буде інтеграція з LiqPay/Fondy тощо)');
+    alert('Переход к оплате картой... (здесь будет интеграция с LiqPay/Fondy и т.д.)');
     onClose();
   };
 
@@ -113,7 +112,7 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <BsX className={styles.modalCloseIcon} onClick={onClose} />
 
-        <h2 className={styles.title}>Введіть реквізити для формування рахунку</h2>
+        <h2 className={styles.title}>Введите реквизиты для формирования счета</h2>
 
         <form className={styles.form} onSubmit={handleSubmitEmail}>
           <div className={styles.field}>
@@ -122,7 +121,7 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
               name='companyName'
               value={formData.companyName}
               onChange={handleChange}
-              placeholder='Назва компанії'
+              placeholder='Название компании'
             />
           </div>
 
@@ -132,7 +131,7 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
               name='ipn'
               value={formData.ipn}
               onChange={handleChange}
-              placeholder='ІПН / ЄДРПОУ'
+              placeholder='ИНН / ЕГРПОУ'
             />
           </div>
 
@@ -142,7 +141,7 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
               name='address'
               value={formData.address}
               onChange={handleChange}
-              placeholder='Адреса'
+              placeholder='Адрес'
             />
           </div>
 
@@ -173,12 +172,12 @@ export default function InvoiceModal({ isOpen, onClose, totalCost = 0 }) {
           </div>
 
           <button type='submit' className={styles.btnEmail} disabled={isSubmitting || !isFormValid}>
-            {isSubmitting ? 'Відправляється...' : 'Відправити рахунок на email'}
+            {isSubmitting ? 'Отправляется...' : 'Отправить счет на email'}
           </button>
         </form>
 
         <button onClick={handlePayCard} className={styles.btnCard}>
-          Оплатити карткою
+          Оплатить картой
         </button>
       </div>
     </div>

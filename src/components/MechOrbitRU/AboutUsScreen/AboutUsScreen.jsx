@@ -7,7 +7,7 @@ import { FaArrowTrendUp } from 'react-icons/fa6';
 import { GoDotFill } from 'react-icons/go';
 import { CgFileDocument } from 'react-icons/cg';
 import { BsArrowRightShort } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import LangLink from '../../../components/LangLink/LangLink';
 
 export default function AboutUsScreen({ scrollToSection }) {
   const aboutUsText = [
@@ -74,9 +74,9 @@ export default function AboutUsScreen({ scrollToSection }) {
             </div>
           </div>
           <div className={styles.buttons}>
-            <Link to='/register' target='_blank' className={styles.button}>
+            <LangLink to='/register' target='_blank' className={styles.button}>
               Подключить
-            </Link>
+            </LangLink>
 
             {/* <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
               Подключить

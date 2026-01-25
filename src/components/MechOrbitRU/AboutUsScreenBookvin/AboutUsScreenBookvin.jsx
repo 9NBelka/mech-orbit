@@ -13,31 +13,31 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
   const aboutUsText = [
     {
       icon: <BsIntersect className={styles.cardIcon} />,
-      title: 'Електронна Сервісна Книга',
+      title: 'Электронная Сервисная Книга',
       description:
-        'Незамінний помічник. Повна історія обслуговування, яка завжди під рукою. Підвищує залишкову вартість авто при продажу.',
+        'Незаменимый ассистент. Полная история обслуживания, которая всегда находится под рукой. Повышает остаточную стоимость авто при продаже.',
       classForHover: 'classForHoverBlue',
     },
     {
       icon: <TbSettingsFilled className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
-      title: 'Регламент від Виробника',
+      title: 'Регламент от Производителя',
       description:
-        'Забудьте про здогадки. Додаток чітко скаже, коли міняти ГРМ, рідини та свічки саме для вашої моделі авто.',
+        'Забудьте о догадках. Приложение ясно скажет, когда менять ГРМ, жидкости и свечи именно для вашей модели авто.',
       classForHover: 'classForHoverPurple',
     },
 
     {
       icon: <RiWallet3Fill className={clsx(styles.cardIcon, styles.colorGreen)} />,
-      title: 'Контроль Витрат',
+      title: 'Контроль Расходов',
       description:
-        'Зберігайте чеки простим фотографуванням. Розумійте реальну вартість володіння кілометром пробігу.',
+        'Храните чеки простой фотографией. Понимайте реальную стоимость владения километром пробега.',
       classForHover: 'classForHoverGreen',
     },
     {
       icon: <RiAlertLine className={clsx(styles.cardIcon, styles.colorPurple)} />,
-      title: 'Попередження Поломок',
+      title: 'Предупреждение Поломок',
       description:
-        'Аналізуючи дані тисяч подібних авто, система попередить про типові слабкі місця вашої моделі до того, як вони стануть проблемою.',
+        'Анализируя данные тысяч подобных авто, система предупредит о типичных слабых местах вашей модели до того, как они станут проблемой.',
       classForHover: 'classForHoverOrange',
     },
   ];
@@ -50,16 +50,16 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
             <p>Створено реальним автосервісом</p>
           </div> */}
           <h3 className={styles.titleScreen}>
-            <span>Bookvin</span> - мобільний додаток автовласника
+            <span>Bookvin</span> - мобильное приложение автовладельца
           </h3>
           <div className={styles.borderLine}></div>
           <p className={styles.textDescription}>
-            Ми створили bookvin з побажань автовласників. В основі — регламенти автовиробників та
-            досвід обслуговування тисяч авто.
+            Мы создали bookvin из пожеланий автовладельцев. В основе - регламенты автопроизводителей
+            и опыт обслуживания тысяч авто.
           </p>
           <div className={styles.imageAndIconBlocks}>
             <div className={styles.blockImageDashboard}>
-              <img src='images/mech-orbit-screen-bookvin.webp' />
+              <img src='images/mech-orbit-screen-bookvin-phone.jpg' />
             </div>
             <div className={styles.iconsBlocks}>
               {aboutUsText.map((text, index) => (

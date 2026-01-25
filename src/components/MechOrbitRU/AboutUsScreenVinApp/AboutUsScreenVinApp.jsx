@@ -9,21 +9,21 @@ export default function AboutUsScreenVinApp({ scrollToSection }) {
   const aboutUsText = [
     {
       icon: <LuCamera className={styles.cardIcon} />,
-      title: 'Фотофіксація авто',
-      description: 'Швидке фото пошкоджень та стану автомобіля з мобільного',
+      title: 'Фотофиксация авто',
+      description: 'Быстрое фото повреждений и состояния автомобиля с мобильного',
       classForHover: 'classForHoverBlue',
     },
     {
       icon: <LuWrench className={clsx(styles.cardIcon, styles.colorLightBlue)} />,
-      title: 'Мобільна діагностика',
-      description: 'Проведення діагностики та фіксація результатів прямо з телефону',
+      title: 'Мобильная диагностика',
+      description: 'Проведение диагностики и фиксация результатов прямо с телефона',
       classForHover: 'classForHoverPurple',
     },
 
     {
       icon: <LuClipboardList className={clsx(styles.cardIcon, styles.colorGreen)} />,
-      title: 'Управління роботами',
-      description: 'Контроль хода робіт, оновлення статусів завдань',
+      title: 'Управление работами',
+      description: 'Контроль хода работ, обновление статусов задач',
       classForHover: 'classForHoverGreen',
     },
     {
@@ -42,10 +42,12 @@ export default function AboutUsScreenVinApp({ scrollToSection }) {
             <p>Створено реальним автосервісом</p>
           </div> */}
           <h3 className={styles.titleScreen}>
-            <span>Мобільний додаток автомеханіка</span>
+            <span>Мобильное приложение автомеханика</span>
           </h3>
           <div className={styles.borderLine}></div>
-          <p className={styles.textDescription}>Всі дані з додатку миттєво потрапляють у CRMmech</p>
+          <p className={styles.textDescription}>
+            Все данные из приложения мгновенно попадают в CRMmech
+          </p>
           <div className={styles.imageAndIconBlocks}>
             <div className={styles.iconsBlocks}>
               {aboutUsText.map((text, index) => (
@@ -67,7 +69,7 @@ export default function AboutUsScreenVinApp({ scrollToSection }) {
               ))}
             </div>
             <div className={styles.blockImageDashboard}>
-              <img src='images/mech-orbit-screen-vin-app.webp' />
+              <img src='images/mech-orbit-screen-vin-app-phone.jpg' />
             </div>
           </div>
           <div className={styles.buttons}>

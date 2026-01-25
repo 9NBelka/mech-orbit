@@ -66,7 +66,6 @@ export default function ContactForm() {
 
     setFormData((prev) => ({ ...prev, [name]: newValue }));
 
-    // Очищаем ошибку при вводе
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -85,40 +84,40 @@ export default function ContactForm() {
     switch (fieldName) {
       case 'name':
         if (!trimmed) {
-          error = "Ім'я обов'язкове";
+          error = 'Имя обязательно';
         } else if (trimmed.length > 20) {
-          error = "Ім'я не може бути довшим за 20 символів";
+          error = 'Имя не может быть длиннее 20 символов';
         }
         break;
 
       case 'phone':
         if (!trimmed) {
-          error = 'Телефон обов’язковий';
+          error = 'Телефон обязателен';
         } else {
           const digitsOnly = value.replace(/\D/g, '');
           if (digitsOnly.length < 9) {
-            error = 'Номер повинен містити мінімум 9 цифр';
+            error = 'Номер должен содержать минимум 9 цифр';
           } else if (digitsOnly.length > 12) {
-            error = 'Номер не може містити більше 12 цифр';
+            error = 'Номер не может содержать более 12 цифр';
           }
         }
         break;
 
       case 'city':
         if (trimmed.length > 50) {
-          error = 'Назва міста занадто довга';
+          error = 'Название города слишком длинное';
         }
         break;
 
       case 'postsCount':
         if (trimmed && !/^\d+$/.test(trimmed)) {
-          error = 'Тільки цифри';
+          error = 'Только цифры';
         }
         break;
 
       case 'ctoFormat':
         if (trimmed && !/^[\d\s%\+()A-Za-zА-ЯҐЄІЇа-яґєії'\-]+$/.test(trimmed)) {
-          error = 'Дозволені цифри, літери, %, +, пробіли та дефіс';
+          error = 'Разрешенные цифры, буквы, %, +, пробелы и дефис';
         }
         break;
 
@@ -129,43 +128,41 @@ export default function ContactForm() {
     setErrors((prev) => ({ ...prev, [fieldName]: error }));
   };
 
-  // Новая функция — правильная валидация всей формы
   const validateForm = () => {
     const newErrors = {};
 
-    // Имя
     const trimmedName = formData.name.trim();
     if (!trimmedName) {
-      newErrors.name = "Ім'я обов'язкове";
+      newErrors.name = 'Имя обязательно';
     } else if (trimmedName.length > 20) {
-      newErrors.name = "Ім'я не може бути довшим за 20 символів";
+      newErrors.name = 'Имя не может быть длиннее 20 символов';
     }
 
     // Телефон
     const trimmedPhone = formData.phone.trim();
     if (!trimmedPhone) {
-      newErrors.phone = 'Телефон обов’язковий';
+      newErrors.phone = 'Телефон обязателен';
     } else {
       const digitsOnly = formData.phone.replace(/\D/g, '');
       if (digitsOnly.length < 9) {
-        newErrors.phone = 'Номер повинен містити мінімум 9 цифр';
+        newErrors.phone = 'Номер должен содержать минимум 9 цифр';
       } else if (digitsOnly.length > 12) {
-        newErrors.phone = 'Номер не може містити більше 12 цифр';
+        newErrors.phone = 'Номер не может содержать более 12 цифр';
       }
     }
 
     // Опциональные поля
     if (formData.city.trim().length > 50) {
-      newErrors.city = 'Назва міста занадто довга';
+      newErrors.city = 'Название города слишком длинное';
     }
     if (formData.postsCount.trim() && !/^\d+$/.test(formData.postsCount.trim())) {
-      newErrors.postsCount = 'Тільки цифри';
+      newErrors.postsCount = 'Только цифры';
     }
     if (
       formData.ctoFormat.trim() &&
       !/^[\d\s%\+()A-Za-zА-ЯҐЄІЇа-яґєії'\-]+$/.test(formData.ctoFormat.trim())
     ) {
-      newErrors.ctoFormat = 'Дозволені цифри, літери, %, +, пробіли та дефіс';
+      newErrors.ctoFormat = 'Разрешенные цифры, буквы, %, +, пробелы и дефис';
     }
 
     setErrors(newErrors);
@@ -217,17 +214,17 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (data.ok) {
-        alert('Заявку успішно відправлено!');
+        alert('Заявка успешно отправлена!');
         setFormData({ name: '', phone: '', city: '', postsCount: '', ctoFormat: '' });
         setTouched({});
         setErrors({});
       } else {
         console.error('Ошибка Telegram:', data);
-        alert('Помилка отправки. Спробуйте пізніше.');
+        alert('Ошибка отправки. Попытайтесь позже.');
       }
     } catch (err) {
       console.error('Ошибка сети:', err);
-      alert("Помилка з'єднання. Перевірте інтернет.");
+      alert('Ошибка соединения. Проверьте Интернет.');
     } finally {
       setIsSubmitting(false);
     }
@@ -246,7 +243,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Ваше Ім'я *"
+            placeholder='Ваше Имя *'
             className={errors.name && touched.name ? styles.errorInput : ''}
           />
           {/* {errors.name && touched.name && <span className={styles.error}>{errors.name}</span>} */}
@@ -272,7 +269,7 @@ export default function ContactForm() {
             value={formData.city}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder='Місто'
+            placeholder='Город'
             className={errors.city && touched.city ? styles.errorInput : ''}
           />
           {/* {errors.city && touched.city && <span className={styles.error}>{errors.city}</span>} */}
@@ -285,7 +282,7 @@ export default function ContactForm() {
             value={formData.postsCount}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder='Кількість постів'
+            placeholder='Количество постов'
             className={errors.postsCount && touched.postsCount ? styles.errorInput : ''}
           />
           {/* {errors.postsCount && touched.postsCount && (
@@ -310,7 +307,7 @@ export default function ContactForm() {
 
         <button type='submit' className={styles.submitBtn} disabled={isSubmitting || !isFormValid}>
           <img src={planeIcon} alt='' className={styles.planeIcon} />
-          {isSubmitting ? 'Відправляється...' : 'Відправити заявку'}
+          {isSubmitting ? 'Отправляется...' : 'Отправить заявку'}
         </button>
       </form>
     </div>

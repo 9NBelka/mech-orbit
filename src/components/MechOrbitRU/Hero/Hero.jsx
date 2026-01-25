@@ -5,6 +5,7 @@ import { BsArrowRightShort, BsDownload } from 'react-icons/bs';
 import clsx from 'clsx';
 import { IoMdCheckmark } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import LangLink from '../../../components/LangLink/LangLink';
 
 const Hero = ({ scrollToSection }) => {
   const heroList = [
@@ -44,9 +45,9 @@ const Hero = ({ scrollToSection }) => {
             ))}
           </div>
           <div className={styles.buttons}>
-            <Link to='/register' target='_blank'>
+            <LangLink to='/register' target='_blank'>
               <button className={styles.button}>Начните прямо сейчас - это бесплатно!</button>
-            </Link>
+            </LangLink>
 
             {/* <button className={styles.button} onClick={() => scrollToSection('tryToStart')}>
               Подключить

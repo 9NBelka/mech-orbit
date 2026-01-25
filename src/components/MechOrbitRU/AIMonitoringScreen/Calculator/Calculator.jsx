@@ -262,8 +262,8 @@ export default function Calculator({ scrollToSection }) {
       </div>
       <div className={styles.textBottomCalcBlock}>
         <p className={styles.textBottomCalc}>
-          <span>*</span> загальні камери - для контролю ситуації та огляду теріторії , без
-          розпізнавання номерів
+          <span>*</span> общие камеры - для контроля ситуации и обзора территории, без распознавание
+          номеров
         </p>
       </div>
       <InvoiceModal
