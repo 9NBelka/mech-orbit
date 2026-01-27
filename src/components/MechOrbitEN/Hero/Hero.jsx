@@ -31,7 +31,7 @@ const Hero = ({ scrollToSection }) => {
             <p>OS for a profitable auto service</p>
           </div>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Three products.<br /> One system.</span> <br />
+            <span className={styles.gradientText}>Three products<br /> One system</span> <br />
             From vehicle check-in to auto service profit.
           </h1>
 

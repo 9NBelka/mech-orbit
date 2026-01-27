@@ -25,8 +25,8 @@ const Hero = ({ scrollToSection }) => {
             <p>OS прибуткового автосервісу</p>
           </div>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Три продукти.<br /> Одна система.</span> <br />
-            Від заїзду автомобіля — до прибутку автосервісу.
+            <span className={styles.gradientText}>Три продукти<br /> Одна система</span> <br />
+            Від заїзду автомобіля - до прибутку автосервісу.
           </h1>
 
           <div className={styles.descriptionBlock}>
