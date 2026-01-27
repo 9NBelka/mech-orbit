@@ -82,7 +82,7 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
             </div>
           </div>
           <div className={styles.buttons}>
-            <Link to='https://book.vin' target='_blank' className={styles.button}>
+            <Link to='https://book.vin/ua' target='_blank' className={styles.button}>
               Узнать больше <BsArrowRightShort className={styles.buttonIconTwo} />
             </Link>
 

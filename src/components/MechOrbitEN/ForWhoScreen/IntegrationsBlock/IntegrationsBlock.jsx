@@ -12,7 +12,7 @@ export default function IntegrationsBlock() {
       mainStatus: 'Link',
       tags: ['API', 'OAuth', 'Webhook'],
       buttonText: 'Registration',
-      linkToButton: 'https://mech.partners/',
+      linkToButton: 'https://mech.partners/ua',
       list: [
         {
           pointTitle: 'Inter Cars',

@@ -297,17 +297,14 @@ const translations = {
 };
 
 export default function PrivacyPolicy() {
-  // const navigate = useNavigate();
+ 
   const { currentLang } = useOutletContext();
   const translationsText = translations[currentLang] || translations.en;
 
   return (
     <div className={styles.privacyPolicyMainBlock}>
       <div className={styles.privacyPolicyBlock}>
-        {/* <div className={styles.backBlock} onClick={() => navigate(-1)}>
-          <BsArrowLeftShort className={styles.backIcon} />
-          <p className={styles.backText}>{translationsText.backButton}</p>
-        </div> */}
+       
 
         <h1 className={styles.privacyPolicyTitle}>
           {translationsText.title} <span>{translationsText.titleHighlight}</span>

@@ -12,6 +12,8 @@ import Register from './pages/Register/Register';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import CompleteRegistration from './pages/Register/CompleteRegistration/CompleteRegistration';
 import LangWrapper from './components/LangWrapper/LangWrapper';
+import PublicOffer from './pages/PublicOfferAgreement/PublicOfferAgreement';
+import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
 
 const SUPPORTED_LANGS = ['ua', 'ru', 'en'];
 const DEFAULT_LANG = 'ua';
@@ -93,6 +95,8 @@ export default function App() {
           <Route path='register' element={<Register />} />
           {/* <Route path='complete-registration' element={<CompleteRegistration />} /> */}
           <Route path='privacy-policy' element={<PrivacyPolicy />} />
+          <Route path='public-offer' element={<PublicOffer />} />
+          <Route path='terms-of-use' element={<TermsOfUse />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
 
