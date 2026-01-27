@@ -270,6 +270,17 @@
     color: transparent;
     line-height: var(--font-lineh-small2);
   }
+
+  &.headlineTwo{
+     font-size: 1.45vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small2);
+  letter-spacing: -0.025em;
+  padding-left:0.2vw;
+  
+  }
 }
 
 @media (max-width: 1024px) {
@@ -282,6 +293,13 @@
     & .gradientText {
       font-size: 7vw;
     }
+
+    &.headlineTwo{
+font-size: 5vw;
+    letter-spacing: -0.025em;
+    margin-top: 2vw;
+    line-height: var(--font-lineh-small2);
+    }
   }
 }
 
@@ -293,6 +311,12 @@
 
     & .gradientText {
       font-size: 11vw;
+    }
+
+     &.headlineTwo{
+ font-size: 7vw;
+    letter-spacing: -0.01em;
+    margin-top: 5vw;
     }
   }
 }

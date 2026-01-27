@@ -32,8 +32,12 @@ const Hero = ({ scrollToSection }) => {
           </div>
           <h1 className={styles.headline}>
             <span className={styles.gradientText}>Three products. One system</span> <br />
-            From vehicle check-in to auto service profit.
+            
           </h1>
+
+           <p className={clsx(styles.headline,styles.headlineTwo)}>
+                      From vehicle check-in to auto service profit.
+                    </p>
 
           <div className={styles.descriptionBlock}>
             <p className={styles.descriptionTitle}>
