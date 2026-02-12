@@ -17,38 +17,41 @@ const PRODUCT_ROWS = [
     icon: <BsShopWindow className={styles.calcIcon} />,
     name: 'Rooms',
     key: 'rooms',
-    defaultQty: 3,
-    defaultEnabledOptions: ['12mp', 'install'],
+    defaultQty: 0,
+    defaultEnabledOptions: ['12mp'],
   },
   {
     icon: <BsGearFill className={styles.calcIcon} />,
     name: 'Bays',
     key: 'posts',
-    defaultQty: 12,
-    defaultEnabledOptions: ['5mp', 'install'],
+    defaultQty: 1,
+    defaultEnabledOptions: ['5mp'],
   },
   {
     icon: <BsCameraVideo className={styles.calcIcon} />,
     name: 'Entry',
     key: 'entry',
-    defaultQty: 1,
-    defaultEnabledOptions: ['5mp', 'install'],
+    defaultQty: 0,
+    defaultEnabledOptions: ['5mp'],
   },
   {
     icon: <BsCameraVideo className={styles.calcIcon} />,
     name: 'Parking',
     key: 'parking',
-    defaultQty: 1,
-    defaultEnabledOptions: ['12mp', 'install'],
+    defaultQty: 0,
+    defaultEnabledOptions: ['12mp'],
   },
   {
     icon: <BsCameraVideo className={styles.calcIcon} />,
     name: 'Other',
     key: 'other',
-    defaultQty: 1,
+    defaultQty: 0,
     defaultEnabledOptions: [],
   },
 ];
+
+const CAMERA_KEYS = ['5mp', '8mp', '12mp'];
+const INSTALL_KEY = 'install';
 
 // Опции-переключатели (колонки)
 const CAMERA_OPTIONS = [
@@ -81,32 +84,47 @@ export default function Calculator({ scrollToSection }) {
   /**
    * Переключение тумблера опции
    */
-  const toggleOption = (rowKey, optionKey) => {
-    setCalculatorRows((currentRows) =>
-      currentRows.map((productRow) => {
-        if (productRow.key !== rowKey) return productRow;
+    const toggleOption = (rowKey, optionKey) => {
+  setCalculatorRows((currentRows) =>
+    currentRows.map((productRow) => {
+      if (productRow.key !== rowKey) return productRow;
 
-        const isCurrentlyEnabled = productRow.enabledOptions[optionKey];
-        const willBeEnabled = !isCurrentlyEnabled;
+      const isCurrentlyEnabled = productRow.enabledOptions[optionKey];
+      const willBeEnabled = !isCurrentlyEnabled;
 
-        let updatedQuantity = productRow.quantity;
+      let updatedQuantity = productRow.quantity;
 
-        // если включаем опцию и qty = 0 или пусто → ставим 1
-        if (willBeEnabled && (!updatedQuantity || updatedQuantity === 0)) {
-          updatedQuantity = 1;
-        }
+      // если включаем любую опцию и qty = 0 → ставим 1
+      if (willBeEnabled && (!updatedQuantity || updatedQuantity === 0)) {
+        updatedQuantity = 1;
+      }
 
-        return {
-          ...productRow,
-          quantity: updatedQuantity,
-          enabledOptions: {
-            ...productRow.enabledOptions,
-            [optionKey]: willBeEnabled,
-          },
-        };
-      }),
-    );
-  };
+      let newEnabledOptions = { ...productRow.enabledOptions };
+
+      // 👉 если это КАМЕРА
+      if (CAMERA_KEYS.includes(optionKey)) {
+        // выключаем все камеры в строке
+        CAMERA_KEYS.forEach((key) => {
+          newEnabledOptions[key] = false;
+        });
+
+        // включаем выбранную
+        newEnabledOptions[optionKey] = willBeEnabled;
+      }
+
+      // 👉 если это МОНТАЖ
+      if (optionKey === INSTALL_KEY) {
+        newEnabledOptions[INSTALL_KEY] = willBeEnabled;
+      }
+
+      return {
+        ...productRow,
+        quantity: updatedQuantity,
+        enabledOptions: newEnabledOptions,
+      };
+    }),
+  );
+};
 
   /**
    * Изменение количества (с ограничением 0-30)

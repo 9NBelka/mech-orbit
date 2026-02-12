@@ -59,7 +59,7 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
           </p>
           <div className={styles.imageAndIconBlocks}>
             <div className={styles.blockImageDashboard}>
-              <img src='images/mech-orbit-screen-bookvin-phone.jpg' />
+              <img src='/images/mech-orbit-screen-bookvin-phone.jpg' />
             </div>
             <div className={styles.iconsBlocks}>
               {aboutUsText.map((text, index) => (
@@ -82,7 +82,7 @@ export default function AboutUsScreenBookvin({ scrollToSection }) {
             </div>
           </div>
           <div className={styles.buttons}>
-            <Link to='https://book.vin' target='_blank' className={styles.button}>
+            <Link to='https://book.vin/ua' target='_blank' className={styles.button}>
               Дізнатися більше <BsArrowRightShort className={styles.buttonIconTwo} />
             </Link>
 

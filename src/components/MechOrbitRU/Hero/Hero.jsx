@@ -26,9 +26,12 @@ const Hero = ({ scrollToSection }) => {
             <p>OS прибыльного автосервиса</p>
           </div>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Три продукта. Одна система.</span> <br />
-            От заезда автомобиля — до прибыли автосервиса.
+            <span className={styles.gradientText}>Три продукта. Одна система</span> <br />
+           
           </h1>
+          <p className={clsx(styles.headline,styles.headlineTwo)}>
+            От заезда автомобиля - до прибыли автосервиса.
+          </p>
 
           <div className={styles.descriptionBlock}>
             <p className={styles.descriptionTitle}>
@@ -72,7 +75,11 @@ const Hero = ({ scrollToSection }) => {
         </div>
         <div className={styles.visualContent}>
           <img
-            src='images/mech-orbitHeroImage.webp'
+<<<<<<< HEAD
+            src='/images/mech-orbitHeroImage.webp'
+=======
+            src='images/mech-orbitHeroImage.png'
+>>>>>>> c736b2fdc4881931ebcd15037a43544cbba6b33d
             className={styles.backgroundImage}
             alt='orbitHeroImage'
           />

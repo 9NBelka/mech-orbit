@@ -60,13 +60,13 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
               <h4>MECH Orbit</h4>
               <ul>
                 <li>
-                  <a href='/CRMmech'>CRMmech</a>
+                  <a href='https://crmmech.com'target='_blank'>CRMmech</a>
                 </li>
                 <li>
-                  <a href='/MechVin'>MechVin</a>
+                  <a href='https://mech.vin/ua' target='_blank'>MechVin</a>
                 </li>
                 <li>
-                  <a href='/BookVin'>BookVin</a>
+                  <a href='https://book.vin/ua' target='_blank'>BookVin</a>
                 </li>
               </ul>
             </div>
@@ -75,7 +75,7 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
               <h4>MECH Partners</h4>
               <ul>
                 <li>
-                  <a href='/CRMmech'>Suppliers</a>
+                  <a href='https://mech.partners/ua' target='_blank'>Suppliers</a>
                 </li>
                 <li>
                   <a href='/MechVin' className={styles.linkOff}>
@@ -99,7 +99,7 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
               <h4>MECH Capital</h4>
               <ul>
                 <li>
-                  <a href='/CRMmech'>For investors</a>
+                  <a href='https://mech.capital' target='_blank'>For investors</a>
                 </li>
                 <li>
                   <a href='/MechVin' className={styles.linkOff}>
@@ -159,12 +159,12 @@ export default function Footer({ onFooterAndHeaderTextLinksMain }) {
           <LangLink to='/privacy-policy' target='_blank' rel='noopener noreferrer'>
             Privacy Policy
           </LangLink>
-          <a href='/documents/terms-of-use.pdf' download='Terms_of_use.pdf'>
+          <LangLink to='/terms-of-use' target='_blank' rel='noopener noreferrer'>
             Terms of Use
-          </a>
-          <a href='/documents/offer-agreement.pdf' download='Offer_Agreement.pdf'>
+          </LangLink>
+          <LangLink to='/public-offer' target='_blank' rel='noopener noreferrer'>
             Offer Agreement
-          </a>
+          </LangLink>
         </div>
       </div>
     </footer>

@@ -52,7 +52,7 @@ export default function AboutUsScreen({ scrollToSection }) {
           </p>
           <div className={styles.imageAndIconBlocks}>
             <div className={styles.blockImageDashboard}>
-              <img src='images/mech-orbit-screen-dashboard.webp' />
+              <img src='/images/mech-orbit-screen-dashboard.webp' />
             </div>
             <div className={styles.iconsBlocks}>
               {aboutUsText.map((text, index) => (

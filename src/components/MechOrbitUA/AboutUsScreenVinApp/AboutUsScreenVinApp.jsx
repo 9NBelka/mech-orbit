@@ -67,7 +67,7 @@ export default function AboutUsScreenVinApp({ scrollToSection }) {
               ))}
             </div>
             <div className={styles.blockImageDashboard}>
-              <img src='images/mech-orbit-screen-vin-app-phone.jpg' />
+              <img src='/images/mech-orbit-screen-vin-app-phone.jpg' />
             </div>
           </div>
           <div className={styles.buttons}>
