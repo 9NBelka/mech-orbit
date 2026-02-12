@@ -9,8 +9,7 @@ const translations = {
     description1:
       'Ласкаво просимо на веб-сайт MechOrbit. Використовуючи наш веб-сайт, ви погоджуєтесь дотримуватися цих Умов використання. Якщо ви не погоджуєтесь з будь-якою частиною цих умов, будь ласка, не використовуйте наш веб-сайт.',
     section1: '1. Загальні положення',
-    section1_desc:
-      'Ці Умови використання регулюють доступ та використання веб-сайту MechOrbit.',
+    section1_desc: 'Ці Умови використання регулюють доступ та використання веб-сайту MechOrbit.',
     section2: '2. Використання веб-сайту',
     section2_list: [
       'Ви зобов’язуєтесь використовувати веб-сайт лише в законних цілях;',
@@ -56,8 +55,7 @@ const translations = {
     section5_desc:
       'Мы оставляем за собой право изменять данные Условия использования в любое время. Продолжение использования сайта означает согласие с изменениями.',
     section6: '6. Контактная информация',
-    section6_desc:
-      'Если у вас есть вопросы по данным Условиям использования, свяжитесь с нами:',
+    section6_desc: 'Если у вас есть вопросы по данным Условиям использования, свяжитесь с нами:',
     contact: 'Email: hello@mechorbit.com',
   },
 
@@ -67,8 +65,7 @@ const translations = {
     description1:
       'Welcome to the MechOrbit website. By using our Website, you agree to comply with these Terms of Use. If you do not agree with any part of these terms, please do not use the Website.',
     section1: '1. General Provisions',
-    section1_desc:
-      'These Terms of Use govern your access to and use of the MechOrbit Website.',
+    section1_desc: 'These Terms of Use govern your access to and use of the MechOrbit Website.',
     section2: '2. Use of the Website',
     section2_list: [
       'You agree to use the Website only for lawful purposes;',
@@ -85,8 +82,7 @@ const translations = {
     section5_desc:
       'We reserve the right to update these Terms of Use at any time. Continued use of the Website constitutes acceptance of the updated terms.',
     section6: '6. Contact Information',
-    section6_desc:
-      'If you have any questions about these Terms of Use, please contact us:',
+    section6_desc: 'If you have any questions about these Terms of Use, please contact us:',
     contact: 'Email: hello@mechorbit.com',
   },
 };
@@ -96,37 +92,39 @@ export default function TermsOfUse() {
   const t = translations[currentLang] || translations.en;
 
   return (
-    <div  className={styles.privacyPolicyMainBlock}>
+    <div className={styles.privacyPolicyMainBlock}>
       <div className={styles.privacyPolicyBlock}>
-      <h1 className={styles.privacyPolicyTitle}>
-        {t.title} <span>{t.titleHighlight}</span>
-      </h1>
+        <h1 className={styles.privacyPolicyTitle}>
+          {t.title} <span>{t.titleHighlight}</span>
+        </h1>
 
-      <p className={styles.privacyPolicyDescriptions}>{t.description1}</p>
+        <p className={styles.privacyPolicyDescriptions}>{t.description1}</p>
 
-<div className={styles.privacyPolicyMainList}>
-      <h4 className={styles.privacyPolicyMainListTitle}>{t.section1}</h4>
-      <p>{t.section1_desc}</p>
+        <div className={styles.privacyPolicyMainList}>
+          <h4 className={styles.privacyPolicyMainListTitle}>{t.section1}</h4>
+          <p className={styles.privacyPolicyMainListDescriptions}>{t.section1_desc}</p>
 
-      <h4 className={styles.privacyPolicyMainListTitle}>{t.section2}</h4>
-      <ul className={styles.privacyPolicyList}>
-        {t.section2_list.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
+          <h4 className={styles.privacyPolicyMainListTitle}>{t.section2}</h4>
+          <ul className={styles.privacyPolicyList}>
+            {t.section2_list.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
 
-      <h4 className={styles.privacyPolicyMainListTitle}>{t.section3}</h4>
-      <p className={styles.privacyPolicyMainListDescriptions}>{t.section3_desc}</p>
+          <h4 className={styles.privacyPolicyMainListTitle}>{t.section3}</h4>
+          <p className={styles.privacyPolicyMainListDescriptions}>{t.section3_desc}</p>
 
-      <h4 className={styles.privacyPolicyMainListTitle}>{t.section4}</h4>
-      <p className={styles.privacyPolicyMainListDescriptions}>{t.section4_desc}</p>
+          <h4 className={styles.privacyPolicyMainListTitle}>{t.section4}</h4>
+          <p className={styles.privacyPolicyMainListDescriptions}>{t.section4_desc}</p>
 
-      <h4 className={styles.privacyPolicyMainListTitle}>{t.section5}</h4>
-      <p className={styles.privacyPolicyMainListDescriptions}>{t.section5_desc}</p>
+          <h4 className={styles.privacyPolicyMainListTitle}>{t.section5}</h4>
+          <p className={styles.privacyPolicyMainListDescriptions}>{t.section5_desc}</p>
 
-      <h4 className={styles.privacyPolicyMainListTitle}>{t.section6}</h4>
-      <p className={styles.privacyPolicyMainListDescriptions}>{t.section6_desc}</p>
-      <p className={styles.privacyPolicyMainListDescriptions}>{t.contact}</p>
-    </div></div></div>
+          <h4 className={styles.privacyPolicyMainListTitle}>{t.section6}</h4>
+          <p className={styles.privacyPolicyMainListDescriptions}>{t.section6_desc}</p>
+          <p className={styles.privacyPolicyMainListDescriptions}>{t.contact}</p>
+        </div>
+      </div>
+    </div>
   );
 }
