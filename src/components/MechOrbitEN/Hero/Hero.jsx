@@ -31,11 +31,12 @@ const Hero = ({ scrollToSection }) => {
             <p>OS for a profitable auto service</p>
           </div>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Three products. One system</span> <br />
+            <span className={styles.gradientText}>Digital standard for the auto business</span>
+            <br />
           </h1>
 
           <p className={clsx(styles.headline, styles.headlineTwo)}>
-            From vehicle check-in to auto service profit.
+            Transparency and profitability of car service
           </p>
 
           <div className={styles.descriptionBlock}>
@@ -55,7 +56,7 @@ const Hero = ({ scrollToSection }) => {
             ))}
           </div>
           <div className={styles.buttons}>
-            <LangLink to='/register' target='_blank'>
+            <LangLink to='/register'>
               <button className={styles.button}>Get started right now — it’s free!</button>
             </LangLink>
 

@@ -153,13 +153,12 @@ export default function TryToStartScreen({ isOn, getDisplayPrice }) {
                   <p className={styles.infoText}>{info.point}</p>
                 </div>
               ))}
-              <LangLink to={'/register'} target='_blank' className={styles.infoButton}>
+              <LangLink to={'/register'} className={styles.infoButton}>
                 🚀 Try 14 days for 0 UAH
                 <MdOutlineKeyboardArrowRight className={styles.buttonIcon} />
               </LangLink>
               <LangLink
                 to={'/register'}
-                target='_blank'
                 className={clsx(styles.infoButton, styles.infoButtonPhone)}>
                 Login
                 <MdOutlineKeyboardArrowRight className={styles.buttonIcon} />

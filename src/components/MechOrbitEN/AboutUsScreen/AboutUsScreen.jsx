@@ -79,7 +79,7 @@ export default function AboutUsScreen({ scrollToSection }) {
           </div>
 
           <div className={styles.buttons}>
-            <LangLink to='/register' target='_blank' className={styles.button}>
+            <LangLink to='/register' className={styles.button}>
               Connect
             </LangLink>
 

@@ -25,9 +25,11 @@ const Hero = ({ scrollToSection }) => {
             <p>OS прибуткового автосервісу</p>
           </div>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Три продукти. Одна система.</span> <br />
-            Від заїзду автомобіля — до прибутку автосервісу.
+            <span className={styles.gradientText}>Цифровий стандарт автобізнесу</span> <br />
           </h1>
+          <p className={clsx(styles.headline, styles.headlineTwo)}>
+            Прозорість та прибутковість автосервісу
+          </p>
 
           <div className={styles.descriptionBlock}>
             <p className={styles.descriptionTitle}>
@@ -45,7 +47,7 @@ const Hero = ({ scrollToSection }) => {
             ))}
           </div>
           <div className={styles.buttons}>
-            <LangLink to='/register' target='_blank'>
+            <LangLink to='/register'>
               <button className={styles.button}>Почніть просто зараз — це безкоштовно!</button>
             </LangLink>
 
