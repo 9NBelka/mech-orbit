@@ -16,7 +16,10 @@ export default async function handler(req, res) {
     return res.status(404).end();
   }
 
-  const prerenderUrl = `https://service.prerender.io/${req.headers.host}${req.url}`;
+  // const prerenderUrl = `https://service.prerender.io/${req.headers.host}${req.url}`;
+  const prerenderUrl = `https://service.prerender.io/https://mech-orbit.vercel.app${req.url}`;
+
+  // const prerenderUrl = `https://mech-orbit.vercel.app${req.url}`;
 
   try {
     const response = await fetch(prerenderUrl, {
