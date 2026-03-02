@@ -1,18 +1,22 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
+      "src": "/(.*)",
       "has": [
         {
-          "type": "host",
-          "value": "autoservice.impossiblead.com"
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i)(googlebot|bingbot|yandex|twitterbot|facebookexternalhit|linkedinbot)"
         }
       ],
-      "destination": "/"
+      "dest": "https://service.prerender.io/https://mechorbit.com/$1",
+      "headers": {
+        "X-Prerender-Token": "HRrs9dDZ6IeEwlqaf1kZ"
+      }
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
