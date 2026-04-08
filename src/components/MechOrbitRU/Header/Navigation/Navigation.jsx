@@ -21,8 +21,8 @@ export default function Navigation({
         Invest Now
       </button> */}
       <LangSwitcher currentLang={currentLang} langSwitcher={langSwitcher} />
-      <Link to='https://mech.capital' target='_blank' className={styles.buttonInvestLink}>
-        <button className={styles.buttonInvest}>Инвестировать</button>
+      <Link to='/ru/register' target='_blank' className={styles.buttonInvestLink}>
+        <button className={styles.buttonInvest}>Вход</button>
       </Link>
     </nav>
   );
